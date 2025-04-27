@@ -1,4 +1,5 @@
 ﻿CREATE DATABASE TecnoCell_db;
+
 GO
 USE [master]
 GO
@@ -43,7 +44,8 @@ CREATE TABLE Producto (
 CREATE TABLE Cliente (
   id_Cliente INT NOT NULL PRIMARY KEY IDENTITY(1,1),
   nombres VARCHAR(100) NOT NULL,
-  apellidos VARCHAR(100) NOT NULL,
+  primerApellido VARCHAR(100) NOT NULL,
+  segundoApellido VARCHAR(100) NULL,
   direccion VARCHAR(250) NULL,
   celular VARCHAR(30) NULL
 );
@@ -91,6 +93,32 @@ ALTER TABLE DetalleCompra ADD estado SMALLINT NOT NULL DEFAULT 1;
 
 -- Procedimientos almacenados
 
+GO
+CREATE OR ALTER PROC paProductoListar @parametro VARCHAR(100)
+AS
+BEGIN
+  SELECT p.*, m.nombreModelo
+  FROM Producto p
+  INNER JOIN Modelo m ON p.idModelo = m.id_Modelo
+  WHERE p.estado <> -1 
+    AND (p.descripcion + m.nombreModelo + m.marca) LIKE '%' + REPLACE(@parametro, ' ', '%') + '%'
+  ORDER BY p.estado DESC, p.descripcion ASC;
+END;
+GO
+
+
+GO
+CREATE OR ALTER PROC paClienteListar @parametro VARCHAR(100)
+AS
+BEGIN
+  SELECT * 
+  FROM Cliente
+  WHERE estado <> -1 
+    AND (nombres + primerApellido + celular) LIKE '%' + REPLACE(@parametro, ' ', '%') + '%'
+  ORDER BY estado DESC, nombres ASC, primerApellido ASC;
+END;
+GO
+
 
 
 -- Introduccion de datos
@@ -114,8 +142,8 @@ WHERE idModelo IN (SELECT id FROM Modelo);
 
 
 -- Insertar en Cliente
-INSERT INTO Cliente (nombres, apellidos, direccion, celular)
-VALUES ('Juan', 'Pérez López', 'Av. Las Flores #123', '71717171');
+INSERT INTO Cliente (nombres, primerApellido, segundoApellido, direccion, celular)
+VALUES ('Juan', 'Pérez',' López', 'Av. Las Flores #123', '71717171');
 
 -- Insertar en Compra
 INSERT INTO Compra (idCliente, totalCompra)
@@ -126,3 +154,7 @@ VALUES (1, 1499.98);
 -- Consultas finales
 SELECT * FROM Producto;
 SELECT * FROM Cliente;
+SELECT * FROM Compra;
+SELECT * FROM Modelo;
+
+
