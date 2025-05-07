@@ -54,6 +54,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClienteCln.cs" />
+    <Compile Include="CompraCln.cs" />
+    <Compile Include="DetalleCompraCln.cs" />
+    <Compile Include="ModeloCln.cs" />
+    <Compile Include="ProductoCln.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
