@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TecnoCell")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+198b17206276229267f94d127132fb7e135fb205")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7315d02efe8a6512af1fff804b3dfccc2cf5a10")]
 [assembly: System.Reflection.AssemblyProductAttribute("TecnoCell")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TecnoCell")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

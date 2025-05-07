@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="eeeba21536fc4b41a0a28b1a18ed5003" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="TecnoCell_dbModel.Cliente" Width="1.5" PointX="10.375" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TecnoCell_dbModel.Compra" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TecnoCell_dbModel.DetalleCompra" Width="1.5" PointX="5" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TecnoCell_dbModel.Modelo" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TecnoCell_dbModel.Producto" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="TecnoCell_dbModel.fk_Compra_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="TecnoCell_dbModel.fk_DetalleCompra_Compra" ManuallyRouted="false" />
+        <AssociationConnector Association="TecnoCell_dbModel.fk_DetalleCompra_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="TecnoCell_dbModel.fk_Producto_Modelo" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
