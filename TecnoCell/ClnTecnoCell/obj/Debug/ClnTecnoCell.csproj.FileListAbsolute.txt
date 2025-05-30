@@ -13,3 +13,18 @@ C:\Users\HP\Desktop\sis457_TecnoCell\TecnoCell\ClnTecnoCell\obj\Debug\ClnTecnoCe
 C:\Users\HP\Desktop\sis457_TecnoCell\TecnoCell\ClnTecnoCell\obj\Debug\ClnTecno.5C8F6872.Up2Date
 C:\Users\HP\Desktop\sis457_TecnoCell\TecnoCell\ClnTecnoCell\obj\Debug\ClnTecnoCell.dll
 C:\Users\HP\Desktop\sis457_TecnoCell\TecnoCell\ClnTecnoCell\obj\Debug\ClnTecnoCell.pdb
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\ClnTecnoCell\bin\Debug\ClnTecnoCell.dll.config
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\ClnTecnoCell\bin\Debug\ClnTecnoCell.dll
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\ClnTecnoCell\bin\Debug\ClnTecnoCell.pdb
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\ClnTecnoCell\bin\Debug\CadTecnoCell.dll
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\ClnTecnoCell\bin\Debug\EntityFramework.dll
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\ClnTecnoCell\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\ClnTecnoCell\bin\Debug\CadTecnoCell.pdb
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\ClnTecnoCell\bin\Debug\CadTecnoCell.dll.config
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\ClnTecnoCell\bin\Debug\EntityFramework.xml
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\ClnTecnoCell\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\ClnTecnoCell\obj\Debug\ClnTecnoCell.csproj.AssemblyReference.cache
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\ClnTecnoCell\obj\Debug\ClnTecnoCell.csproj.CoreCompileInputs.cache
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\ClnTecnoCell\obj\Debug\ClnTecno.5C8F6872.Up2Date
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\ClnTecnoCell\obj\Debug\ClnTecnoCell.dll
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\ClnTecnoCell\obj\Debug\ClnTecnoCell.pdb

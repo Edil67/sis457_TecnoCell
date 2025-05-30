@@ -10,3 +10,15 @@ C:\Users\HP\Desktop\sis457_TecnoCell\TecnoCell\CadTecnoCell\obj\Debug\CadTecnoCe
 C:\Users\HP\Desktop\sis457_TecnoCell\TecnoCell\CadTecnoCell\obj\Debug\CadTecno.C93E0724.Up2Date
 C:\Users\HP\Desktop\sis457_TecnoCell\TecnoCell\CadTecnoCell\obj\Debug\CadTecnoCell.dll
 C:\Users\HP\Desktop\sis457_TecnoCell\TecnoCell\CadTecnoCell\obj\Debug\CadTecnoCell.pdb
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CadTecnoCell\bin\Debug\CadTecnoCell.dll.config
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CadTecnoCell\bin\Debug\CadTecnoCell.dll
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CadTecnoCell\bin\Debug\CadTecnoCell.pdb
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CadTecnoCell\bin\Debug\EntityFramework.dll
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CadTecnoCell\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CadTecnoCell\bin\Debug\EntityFramework.xml
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CadTecnoCell\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CadTecnoCell\obj\Debug\CadTecnoCell.csproj.AssemblyReference.cache
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CadTecnoCell\obj\Debug\CadTecnoCell.csproj.CoreCompileInputs.cache
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CadTecnoCell\obj\Debug\CadTecno.C93E0724.Up2Date
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CadTecnoCell\obj\Debug\CadTecnoCell.dll
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CadTecnoCell\obj\Debug\CadTecnoCell.pdb

@@ -117,56 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="new" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\new.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="categoria2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\categoria2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="304771617_471118535027088_6140584996134929974_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\304771617_471118535027088_6140584996134929974_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dinero" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dinero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="buscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\buscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="categoria" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\categoria.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="detalle_venta" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\detalle_venta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="categoria1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\categoria1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="proveedor" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\proveedor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fondocelular" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fondocelular.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnCaCategoria.IconSet" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAg7SURBVHhe7Z1fbBzVFcbTh6p/hFQeKrVVKIHI97rwkiIe
+        qCpQmrW7a1JKJSpB1VYV/4IQCKnPPICAQkFNvBu1L1Wb7prdvWOts2sgUqWkFIJQjIAAcdLEUCkkQkls
+        RwhDcWysNpzqrGMz850de8js9c4s95N+Epm9d853vzO+G2/uinXrnJycnJycnJycnJycPoc2F3NX9JVy
+        +UwpN9FXzM71lXJkhWJ2jmtkirnBLX/dugF9hCnvjV5RqDTy+XJjolBuzBUqDbJCuTHHNfLlxuCfKrsj
+        +4ulTDF3b6aU/USEZZnFmtl70A+qUGncmy/XPxFhWYZr7qyOruovljLFgbswmLWGHwD0taRCZfQuDKYD
+        hPqLJd52OvHkI5lidqFvV99G9MfbTieefEG5sTBY3S38xRbv+f4g+ocGKD+2kw5PH6Gpc9NWGJ8+QjvG
+        8s1a0IQd6I/3fH8QO6ujtHfsDTp5eoren/nICnzvfWMHm7WCjagLf7HVfMP1hcDhY2C24CYEfxKyR9Ff
+        8w3XFwKHj4HZgpvgr52v1IW/2MK/7Rw5+y8RlC0OTR8O/gSUsufQH/5t5+TpaRGULU6cmsIGCH+xFXwC
+        czR5bkoEZQuuhfXRX3ALaIiQbIP10V9sYQAYkm2wPvrDADAg22B99BdbGAAGZBusj/4wAAzINlgf/cUW
+        BoABtYuDk2+KawzWR38YAAZkG6yP/mILA8CA2sGzb++h7NBWKrzyR/Ea1kd/GAAGZBusj/5iCwPAgOKy
+        FP7S/bEJWB/9YQAYkG2wPvqLLQwAA4zD6MSzgfAZ/vPByTeWx2B99IcBYEC2wfroL7YwAAzxYsEnn/nx
+        0I1UnxgNjMP66A8DwIBsg/XRX2xhABgkMzk7Rcdn3hXXwwh78p95+zkxFuujPwwAA7IN1kd/sYUBYED8
+        y9LvX36KfjHy60ifD0V98pfA+ugPA8CAbIP10V9sYQAYEL9pLr12a+2X9NbUuBhzseG7BqzSAN5K8PWf
+        D99Kr5/57E3UPxbD5z/zdRzrGuATBuAP59THp+nBfz4kQrq5egu9/N6B5XEX8+S7BlwQBoABnZmdpN+9
+        9IQIamvlZnr+xAuxwncNiNAAht+It4vP7nM0UL6pGbb/WpRtxzXAJwwAA/Lzlzd3icD8cDN2R3zyl8B7
+        oD8MAAOyDdZHf7GFAWBAyNPjFeovBf8p8WLDZ/A+6A8DwIBsg/XRX2xhABhQK0aONejh8mYaN5to3utt
+        cnbPAM0cb4ixq4H10R8GgAHZBuujv9jCADCgVsy+/giRp1sye/AxMX4lsD76wwAwINtgffQXWxgABoTM
+        HK+L0JGZd6NvRVgf/WEAGJBtsD76iy0MAANCFv5xmwgcWdh3m5gXBtZHfxgABmQbrI/+YgsDWO0f5T8d
+        2SQCRz6tfV/Ma4X7R3luABxL4UNTGJQfDDsMnNeKQ1PjgfCjHUuxdyALOXFqMhC+lWMpmWLumD8EPiyF
+        QdlqwPaxQfgJkAezCpX6MX8IfFgKg7LF3gNrcDCLj4j7Q+DjgtwEPjSFgbWrAXxv/s0ajyb2lXLb0R8f
+        EfeHwMcFuQl8aAoDaxd8bw4fjybmyw3hL7YypZ+sx21oJTDoMHBeBOb7h/ovR387SrX1uA11gnylMV8Y
+        qgl/bdGWUvaOFoG0BIMOA+etTvh3BApP1+/AQNYa698R6C9mt/FTKIMJgkGHgfNWYD5Tyt2NflD5SmNb
+        8ylsEY5NuOZgub6qv7aItwDeh/nNMGxbwqDDwHkBmvfOHuVa2b9lv4s+wsRbAO/D/GZodVviryhV6ke5
+        1nZvNLK/NREGHQbOc2qTMOgwcJ5Tm4RBh4HznNokDDoMnOfUJmHQYeA8pzYJgw4D5zm1SRh0GDjPqU3C
+        oMPAee0WPfedrzN4veuFQYfhG/8z8vR+8tRsE6NepGrPT4N3jTaOaN2XyOj7yah3lmvxf1f1ffyaf2zX
+        CoMOoznWqCfx+mfB6ceX7xlh3GL4qiJeX0aVvxBNkAsPhZ9ovAb03BR5nOm9U15H1O3ot+skFx3K/hbX
+        ghj1QuRxRr0mrkteRb9dpxaLDmO+xbUgRs9FHmf0griOVNUC+u06iUUnjW5/HxALThquAR3GNaDDpKkB
+        VLv6EvL0jeSpe8hTt1Dt6m/jGJRYcNJIQwMu/Eb5W/L0TMC80f8jT5uVGiEWnDRS0QCj/yCM+zH6Pape
+        pXAeS4xNGklvAFV7NgvTLVEnqdxzmZgvxiWMxDfAUyPCdBhGH6Oq/mZwfotxSSLxDeDtBU2vhNGHqLjh
+        0uX5+HrSSEEDzgrTq7Ofapd9rTlfvpYskt8AdUCYjoLRe+jP135ZXE8aKWjAA8J0VIyuimtJI/ENKG74
+        Knn6LWG8W0h6A1hU23g5eeqMMN8NpKEBLDI915BR/xELSDtpaQCLjB4go/4rFpFWjD6fqgawqKrvFgtJ
+        LWoC15cKkacfk4tJIUZXcW2pUPPTUU+XxILSxrD6Da4tNbrwS9Y+sai0wB+lw+dWqRPVNn6DPHVYLC4N
+        GL0X15NKUU2t/9wf2CWC3h/iWlIrGlabyNMfyUUmlt24htSLPHXD4kFZsdhkwZ/u1jba+QJ1p0Ve74/I
+        6A/FopOCUQv8oKDvrhJV9ffIU/8Wi+80HP5w76/Qb1eq+WWIxSPk50UQHUG9T8O9W9Bn14uMuo6Mel4G
+        soYY9QxVrlqb/8FmUkXDPT8gT+0ioz4WAdnh/OI3ZvT16OULLfp7z1d4KyCjHiWj62T0UfL01IVj5xhi
+        NJqfzqoPFu+lRsiobWSu/BbWdnJycnJycnJycnJySor+D9q5WvMayoxaAAAAAElFTkSuQmCC
+</value>
   </data>
 </root>
