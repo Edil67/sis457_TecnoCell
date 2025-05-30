@@ -20,7 +20,6 @@ C:\Users\HP\Desktop\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell
 C:\Users\HP\Desktop\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.pdb
 C:\Users\HP\Desktop\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmProducto.resources
 C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.csproj.AssemblyReference.cache
-C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.Categoria.resources
 C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmAutenticacion.resources
 C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmPrincipal.resources
 C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmProducto.resources
@@ -48,3 +47,6 @@ C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CpTecnoCel
 C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.csproj.CoreCompileInputs.cache
 C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoC.5A2EB229.Up2Date
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmCategoria.resources
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmCliente.resources
+C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmVenta.resources

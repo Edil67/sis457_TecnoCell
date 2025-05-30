@@ -1,6 +1,6 @@
 ﻿namespace CpTecnoCell
 {
-    partial class Categoria
+    partial class FrmCategoria
     {
         /// <summary>
         /// Required designer variable.
@@ -77,7 +77,7 @@
             this.dgvListaCategoria.ReadOnly = true;
             this.dgvListaCategoria.RowHeadersWidth = 51;
             this.dgvListaCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaCategoria.Size = new System.Drawing.Size(617, 224);
+            this.dgvListaCategoria.Size = new System.Drawing.Size(624, 253);
             this.dgvListaCategoria.TabIndex = 0;
             // 
             // lblCategoria
@@ -99,7 +99,7 @@
             this.lblBusqueda.Location = new System.Drawing.Point(261, 77);
             this.lblBusqueda.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(210, 47);
+            this.lblBusqueda.Size = new System.Drawing.Size(217, 47);
             this.lblBusqueda.TabIndex = 168;
             this.lblBusqueda.Text = "Buscar por Descripción:";
             this.lblBusqueda.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -123,7 +123,7 @@
             this.gbxLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxLista.Location = new System.Drawing.Point(261, 130);
             this.gbxLista.Name = "gbxLista";
-            this.gbxLista.Size = new System.Drawing.Size(666, 313);
+            this.gbxLista.Size = new System.Drawing.Size(673, 367);
             this.gbxLista.TabIndex = 164;
             this.gbxLista.TabStop = false;
             this.gbxLista.Text = "Lista de Producto";
@@ -137,7 +137,7 @@
             this.label2.Location = new System.Drawing.Point(-1, -6);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(928, 76);
+            this.label2.Size = new System.Drawing.Size(935, 76);
             this.label2.TabIndex = 158;
             this.label2.Text = "CATEGORIA";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -253,11 +253,11 @@
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = false;
             // 
-            // Categoria
+            // FrmCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 436);
+            this.ClientSize = new System.Drawing.Size(934, 545);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblBusqueda);
@@ -272,8 +272,9 @@
             this.Controls.Add(this.txtParametroCategoria);
             this.Controls.Add(this.txtDescripcionCategoria);
             this.Controls.Add(this.lblTitulo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Categoria";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "FrmCategoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Categoria";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCategoria)).EndInit();
             this.gbxLista.ResumeLayout(false);

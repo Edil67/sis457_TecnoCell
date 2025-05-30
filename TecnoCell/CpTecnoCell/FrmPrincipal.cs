@@ -17,5 +17,14 @@ namespace CpTecnoCell
             InitializeComponent();
         }
 
+        private void btnCaCategoria_Click(object sender, EventArgs e)
+        {
+            new FrmCategoria().ShowDialog();
+        }
+
+        private void btnCaVenta_Click(object sender, EventArgs e)
+        {
+            new FrmVenta().ShowDialog();
+        }
     }
 }
