@@ -1,0 +1,47 @@
+[33mcommit c2db42967e4e1d819484a7adcd9d62a05b476fd2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Edil Limache <edil67@gmail.com>
+Date:   Fri May 30 02:24:47 2025 -0400
+
+    creacion de frm venta
+
+[33mcommit efe157e3cf14609b20cd8fdb0f19f6da981ab0ad[m
+Author: Edil Limache <edil67@gmail.com>
+Date:   Thu May 29 23:10:15 2025 -0400
+
+    avance de los formularios
+
+[33mcommit d99dea3e943ef94b7033ee42b4050fd94108e647[m
+Author: Edil Limache <edil67@gmail.com>
+Date:   Thu May 29 22:35:30 2025 -0400
+
+    frm autenticacion
+
+[33mcommit 84bde178cb7d25695cf00f1ec3e1fe621d1b702e[m
+Author: Edil Limache <edil67@gmail.com>
+Date:   Thu May 29 20:56:24 2025 -0400
+
+    formulario categoria
+
+[33mcommit bacc3e86025ab64a890d1531af70fe8b69641954[m
+Author: Luis Maturano <maturanosolizluis@gmail.com>
+Date:   Sun May 11 01:58:56 2025 -0400
+
+    formulario
+
+[33mcommit 8a0987c9494cfbe137a6f09fbc3d15967f81f7af[m
+Author: Luis Maturano <maturanosolizluis@gmail.com>
+Date:   Sat May 10 22:27:32 2025 -0400
+
+    configuracion Cln
+
+[33mcommit 71d93548fd326ec1fec5f408f2ffea424dd91bb1[m
+Author: Rodriguez_Darwin <darwin.erh@gmail.com>
+Date:   Tue May 6 22:38:39 2025 -0400
+
+    Cln Entidades
+
+[33mcommit ea5f4163c86b59b0aad95fa36167d149ed4cc7f0[m
+Author: Rodriguez_Darwin <darwin.erh@gmail.com>
+Date:   Tue May 6 22:01:27 2025 -0400
+
+    Correccion de carpetas
