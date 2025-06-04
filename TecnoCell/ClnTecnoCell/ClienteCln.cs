@@ -16,14 +16,14 @@ namespace ClnTecnoCell
             {
                 context.Cliente.Add(cliente);
                 context.SaveChanges();
-                return cliente.id_Cliente;
+                return cliente.id;
             }
         }
         public static int Actualizar(Cliente cliente)
         {
             using (var context = new TecnoCell_dbEntities())
             {
-                var cli = context.Cliente.Find(cliente.id_Cliente);
+                var cli = context.Cliente.Find(cliente.id);
                 if (cli != null)
                 {
                     cli.nombres = cliente.nombres;

@@ -25,8 +25,7 @@ namespace ClnTecnoCell
                 var comp = context.Compra.Find(compra.id);
                 if (comp != null)
                 {
-                    comp.fechaCompra = compra.fechaCompra;
-                    comp.totalCompra = compra.totalCompra;
+                    comp.fecha = compra.fecha;
                     return context.SaveChanges();
                 }
                 return 0;

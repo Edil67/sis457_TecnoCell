@@ -13,12 +13,13 @@ namespace CadTecnoCell
     
     public partial class paClienteListar_Result
     {
-        public int id_Cliente { get; set; }
+        public int id { get; set; }
+        public string cedulaIdentidad { get; set; }
         public string nombres { get; set; }
         public string primerApellido { get; set; }
         public string segundoApellido { get; set; }
         public string direccion { get; set; }
-        public string celular { get; set; }
+        public long celular { get; set; }
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }
         public short estado { get; set; }

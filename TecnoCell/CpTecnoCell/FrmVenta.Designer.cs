@@ -351,10 +351,10 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label3.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.label3.Location = new System.Drawing.Point(6, 118);
+            this.label3.Location = new System.Drawing.Point(6, 412);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1249, 652);
+            this.label3.Size = new System.Drawing.Size(1005, 329);
             this.label3.TabIndex = 93;
             // 
             // label2
@@ -600,7 +600,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1271, 778);
+            this.ClientSize = new System.Drawing.Size(1271, 749);
             this.Controls.Add(this.gbxLista);
             this.Controls.Add(this.txtCambio);
             this.Controls.Add(this.txtPagaCon);

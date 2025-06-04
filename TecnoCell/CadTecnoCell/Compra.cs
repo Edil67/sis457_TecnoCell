@@ -17,19 +17,18 @@ namespace CadTecnoCell
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Compra()
         {
-            this.DetalleCompra = new HashSet<DetalleCompra>();
+            this.CompraDetalle = new HashSet<CompraDetalle>();
         }
     
         public int id { get; set; }
-        public int idCliente { get; set; }
-        public System.DateTime fechaCompra { get; set; }
-        public decimal totalCompra { get; set; }
+        public int idProveedor { get; set; }
+        public System.DateTime fecha { get; set; }
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }
         public short estado { get; set; }
     
-        public virtual Cliente Cliente { get; set; }
+        public virtual Proveedor Proveedor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetalleCompra> DetalleCompra { get; set; }
+        public virtual ICollection<CompraDetalle> CompraDetalle { get; set; }
     }
 }

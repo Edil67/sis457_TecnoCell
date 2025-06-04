@@ -9,27 +9,26 @@ namespace ClnTecnoCell
 {
     public class ModeloCln
     {
-        public static int Insertar(Modelo modelo)
+        public static int Insertar(Producto producto)
         {
             using (var context = new TecnoCell_dbEntities())
             {
-                context.Modelo.Add(modelo);
+                context.Producto.Add(producto);
                 context.SaveChanges();
-                return modelo.id_Modelo;
+                return producto.id;
             }
         }
-        public static int Actualizar(Modelo modelo)
+        public static int Actualizar(Producto producto)
         {
             using (var context = new TecnoCell_dbEntities())
             {
-                var mod = context.Modelo.Find(modelo.id_Modelo);
+                var mod = context.Producto.Find(producto.id);
                 if (mod != null)
                 {
-                    mod.nombreModelo = modelo.nombreModelo;
-                    mod.modeloProducto = modelo.modeloProducto;
-                    mod.marca = modelo.marca;
-                    mod.descripcion = modelo.descripcion;
-                    mod.color = modelo.color;
+                    mod.nombre = producto.nombre;
+                    mod.marca = producto.marca;
+                    mod.descripcion = producto.descripcion;
+                    mod.color = producto.color;
                     return context.SaveChanges();
                 }
                 return 0;
@@ -39,27 +38,27 @@ namespace ClnTecnoCell
         {
             using (var context = new TecnoCell_dbEntities())
             {
-                var modelo = context.Modelo.Find(id);
-                if (modelo != null)
+                var producto = context.Producto.Find(id);
+                if (producto != null)
                 {
-                    context.Modelo.Remove(modelo);
+                    context.Producto.Remove(producto);
                     return context.SaveChanges();
                 }
                 return 0;
             }
         }
-        public static List<Modelo> Listar()
+        public static List<Producto> Listar()
         {
             using (var context = new TecnoCell_dbEntities())
             {
-                return context.Modelo.ToList();
+                return context.Producto.ToList();
             }
         }
-        public static Modelo ObtenerPorId(int id)
+        public static Producto ObtenerPorId(int id)
         {
             using (var context = new TecnoCell_dbEntities())
             {
-                return context.Modelo.Find(id);
+                return context.Producto.Find(id);
             }
         }
     }

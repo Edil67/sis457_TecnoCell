@@ -50,3 +50,32 @@ C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CpTecnoCel
 C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmCategoria.resources
 C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmCliente.resources
 C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmVenta.resources
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\CpTecnoCell.exe.config
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\CpTecnoCell.exe
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\CpTecnoCell.pdb
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\CadTecnoCell.dll
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\ClnTecnoCell.dll
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\EntityFramework.dll
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\EntityFramework.SqlServer.dll
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\CadTecnoCell.pdb
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\CadTecnoCell.dll.config
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\ClnTecnoCell.pdb
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\ClnTecnoCell.dll.config
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\C1.Win.4.5.2.xml
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\C1.Win.Ribbon.4.5.2.xml
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\EntityFramework.xml
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\EntityFramework.SqlServer.xml
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.csproj.AssemblyReference.cache
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmCategoria.resources
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmAutenticacion.resources
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmCliente.resources
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmPrincipal.resources
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmProducto.resources
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmVenta.resources
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.Properties.Resources.resources
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.csproj.GenerateResource.cache
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.exe.licenses
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.csproj.CoreCompileInputs.cache
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoC.5A2EB229.Up2Date
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.exe
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.pdb

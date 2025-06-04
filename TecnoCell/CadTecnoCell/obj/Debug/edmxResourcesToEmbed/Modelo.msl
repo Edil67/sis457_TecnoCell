@@ -1,10 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="TecnoCell_dbModelStoreContainer" CdmEntityContainer="TecnoCell_dbEntities">
+    <EntitySetMapping Name="Categoria">
+      <EntityTypeMapping TypeName="TecnoCell_dbModel.Categoria">
+        <MappingFragment StoreEntitySet="Categoria">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Cliente">
       <EntityTypeMapping TypeName="TecnoCell_dbModel.Cliente">
         <MappingFragment StoreEntitySet="Cliente">
-          <ScalarProperty Name="id_Cliente" ColumnName="id_Cliente" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cedulaIdentidad" ColumnName="cedulaIdentidad" />
           <ScalarProperty Name="nombres" ColumnName="nombres" />
           <ScalarProperty Name="primerApellido" ColumnName="primerApellido" />
           <ScalarProperty Name="segundoApellido" ColumnName="segundoApellido" />
@@ -20,18 +33,17 @@
       <EntityTypeMapping TypeName="TecnoCell_dbModel.Compra">
         <MappingFragment StoreEntitySet="Compra">
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
-          <ScalarProperty Name="fechaCompra" ColumnName="fechaCompra" />
-          <ScalarProperty Name="totalCompra" ColumnName="totalCompra" />
+          <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
           <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
           <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
           <ScalarProperty Name="estado" ColumnName="estado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="DetalleCompra">
-      <EntityTypeMapping TypeName="TecnoCell_dbModel.DetalleCompra">
-        <MappingFragment StoreEntitySet="DetalleCompra">
+    <EntitySetMapping Name="CompraDetalle">
+      <EntityTypeMapping TypeName="TecnoCell_dbModel.CompraDetalle">
+        <MappingFragment StoreEntitySet="CompraDetalle">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="idCompra" ColumnName="idCompra" />
           <ScalarProperty Name="idProducto" ColumnName="idProducto" />
@@ -44,15 +56,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Modelo">
-      <EntityTypeMapping TypeName="TecnoCell_dbModel.Modelo">
-        <MappingFragment StoreEntitySet="Modelo">
-          <ScalarProperty Name="id_Modelo" ColumnName="id_Modelo" />
-          <ScalarProperty Name="nombreModelo" ColumnName="nombreModelo" />
-          <ScalarProperty Name="modeloProducto" ColumnName="modeloProducto" />
-          <ScalarProperty Name="marca" ColumnName="marca" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-          <ScalarProperty Name="color" ColumnName="color" />
+    <EntitySetMapping Name="Empleado">
+      <EntityTypeMapping TypeName="TecnoCell_dbModel.Empleado">
+        <MappingFragment StoreEntitySet="Empleado">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="primerApellido" ColumnName="primerApellido" />
+          <ScalarProperty Name="segundoApellido" ColumnName="segundoApellido" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="celular" ColumnName="celular" />
+          <ScalarProperty Name="cargo" ColumnName="cargo" />
           <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
           <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
           <ScalarProperty Name="estado" ColumnName="estado" />
@@ -63,7 +76,12 @@
       <EntityTypeMapping TypeName="TecnoCell_dbModel.Producto">
         <MappingFragment StoreEntitySet="Producto">
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="idModelo" ColumnName="idModelo" />
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+          <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="producto" ColumnName="producto" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="color" ColumnName="color" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
           <ScalarProperty Name="precioVenta" ColumnName="precioVenta" />
           <ScalarProperty Name="stock" ColumnName="stock" />
@@ -73,10 +91,64 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Proveedor">
+      <EntityTypeMapping TypeName="TecnoCell_dbModel.Proveedor">
+        <MappingFragment StoreEntitySet="Proveedor">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nit" ColumnName="nit" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="TecnoCell_dbModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+          <ScalarProperty Name="usuario1" ColumnName="usuario" />
+          <ScalarProperty Name="clave" ColumnName="clave" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Venta">
+      <EntityTypeMapping TypeName="TecnoCell_dbModel.Venta">
+        <MappingFragment StoreEntitySet="Venta">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VentaDetalle">
+      <EntityTypeMapping TypeName="TecnoCell_dbModel.VentaDetalle">
+        <MappingFragment StoreEntitySet="VentaDetalle">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idVenta" ColumnName="idVenta" />
+          <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="precioUnitario" ColumnName="precioUnitario" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="paClienteListar" FunctionName="TecnoCell_dbModel.Store.paClienteListar">
       <ResultMapping>
         <ComplexTypeMapping TypeName="TecnoCell_dbModel.paClienteListar_Result">
-          <ScalarProperty Name="id_Cliente" ColumnName="id_Cliente" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cedulaIdentidad" ColumnName="cedulaIdentidad" />
           <ScalarProperty Name="nombres" ColumnName="nombres" />
           <ScalarProperty Name="primerApellido" ColumnName="primerApellido" />
           <ScalarProperty Name="segundoApellido" ColumnName="segundoApellido" />
@@ -88,18 +160,38 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="paEmpleadoListar" FunctionName="TecnoCell_dbModel.Store.paEmpleadoListar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TecnoCell_dbModel.paEmpleadoListar_Result">
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="primerApellido" ColumnName="primerApellido" />
+          <ScalarProperty Name="segundoApellido" ColumnName="segundoApellido" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="celular" ColumnName="celular" />
+          <ScalarProperty Name="cargo" ColumnName="cargo" />
+          <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
+          <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="paProductoListar" FunctionName="TecnoCell_dbModel.Store.paProductoListar">
       <ResultMapping>
         <ComplexTypeMapping TypeName="TecnoCell_dbModel.paProductoListar_Result">
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="idModelo" ColumnName="idModelo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="producto" ColumnName="producto" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="categoria" ColumnName="categoria" />
+          <ScalarProperty Name="proveedor" ColumnName="proveedor" />
           <ScalarProperty Name="precioVenta" ColumnName="precioVenta" />
           <ScalarProperty Name="stock" ColumnName="stock" />
           <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
           <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
           <ScalarProperty Name="estado" ColumnName="estado" />
-          <ScalarProperty Name="nombreModelo" ColumnName="nombreModelo" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

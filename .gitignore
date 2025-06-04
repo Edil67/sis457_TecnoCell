@@ -1,1 +1,4 @@
 .vs/
+# Ignorar carpetas de compilación y cachés
+**/obj/
+**/bin/

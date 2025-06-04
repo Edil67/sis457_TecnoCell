@@ -63,8 +63,9 @@ CREATE TABLE Producto (
     idCategoria INT NOT NULL,
     idProveedor INT NOT NULL,
     nombre VARCHAR(150) NOT NULL,
-    modelo VARCHAR(50) NOT NULL,
+    producto VARCHAR(50) NOT NULL,
     marca VARCHAR(50) NOT NULL,
+    color   VARCHAR(50) NULL,
     descripcion VARCHAR(250),
     precioVenta DECIMAL NOT NULL CHECK (precioVenta > 0),
     stock INT NOT NULL DEFAULT 0,
@@ -178,7 +179,7 @@ GO
 CREATE OR ALTER PROC paProductoListar @parametro VARCHAR(100)
 AS
 BEGIN
-    SELECT p.id, p.nombre, p.modelo, p.marca, p.descripcion,
+    SELECT p.id, p.nombre, p.producto, p.marca, p.descripcion,
            c.nombre AS categoria, pr.nombre AS proveedor,
            p.precioVenta, p.stock,
            p.usuarioRegistro, p.fechaRegistro, p.estado
@@ -186,7 +187,7 @@ BEGIN
     INNER JOIN Categoria c ON c.id = p.idCategoria
     INNER JOIN Proveedor pr ON pr.id = p.idProveedor
     WHERE p.estado <> -1 AND
-          (p.nombre + p.modelo + p.marca + ISNULL(p.descripcion, '') + c.nombre + pr.nombre)
+          (p.nombre + p.producto + p.marca + ISNULL(p.descripcion, '') + c.nombre + pr.nombre)
           LIKE '%' + REPLACE(@parametro, ' ', '%') + '%'
     ORDER BY p.estado DESC, p.nombre ASC;
 END;
@@ -229,7 +230,7 @@ VALUES ('Jose', 12345 ,'jose@gmail.com', '33-555','call san juan');
 INSERT INTO Empleado (nombres, primerApellido, segundoApellido, direccion, celular, cargo)
 VALUES ('Juan', 'Perez', 'Lopez', 'Calle Falsa 123', 123456789, 'Vendedor');
 -- Insertar en Producto
-INSERT INTO Producto (idCategoria, idProveedor, nombre, modelo, marca, descripcion, precioVenta, stock)
+INSERT INTO Producto (idCategoria, idProveedor, nombre, producto, marca, descripcion, precioVenta, stock)
 VALUES (1, 1, 'Tablet Samsung', 'Galaxy Tab S7', 'Samsung', 'Tablet de alta gama con pantalla de 11 pulgadas', 500, 10);
 -- Insertar en Cliente
 INSERT INTO Cliente (cedulaIdentidad, nombres, primerApellido, segundoApellido, direccion, celular)

@@ -28,3 +28,18 @@ C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\ClnTecnoCe
 C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\ClnTecnoCell\obj\Debug\ClnTecno.5C8F6872.Up2Date
 C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\ClnTecnoCell\obj\Debug\ClnTecnoCell.dll
 C:\Users\Hp\Documents\UNIVERSIDAD\Edil 457\sis457_TecnoCell\TecnoCell\ClnTecnoCell\obj\Debug\ClnTecnoCell.pdb
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\ClnTecnoCell\obj\Debug\ClnTecnoCell.csproj.AssemblyReference.cache
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\ClnTecnoCell\obj\Debug\ClnTecnoCell.csproj.CoreCompileInputs.cache
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\ClnTecnoCell\obj\Debug\ClnTecnoCell.dll
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\ClnTecnoCell\obj\Debug\ClnTecnoCell.pdb
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\ClnTecnoCell\bin\Debug\ClnTecnoCell.dll.config
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\ClnTecnoCell\bin\Debug\ClnTecnoCell.dll
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\ClnTecnoCell\bin\Debug\ClnTecnoCell.pdb
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\ClnTecnoCell\bin\Debug\CadTecnoCell.dll
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\ClnTecnoCell\bin\Debug\EntityFramework.dll
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\ClnTecnoCell\bin\Debug\EntityFramework.SqlServer.dll
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\ClnTecnoCell\bin\Debug\CadTecnoCell.pdb
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\ClnTecnoCell\bin\Debug\CadTecnoCell.dll.config
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\ClnTecnoCell\bin\Debug\EntityFramework.xml
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\ClnTecnoCell\bin\Debug\EntityFramework.SqlServer.xml
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\ClnTecnoCell\obj\Debug\ClnTecno.5C8F6872.Up2Date

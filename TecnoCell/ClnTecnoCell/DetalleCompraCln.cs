@@ -9,20 +9,20 @@ namespace ClnTecnoCell
 {
     public class DetalleCompraCln
     {
-        public static int Insertar(DetalleCompra detalleCompra)
+        public static int Insertar(CompraDetalle detalleCompra)
         {
             using (var context = new TecnoCell_dbEntities())
             {
-                context.DetalleCompra.Add(detalleCompra);
+                context.CompraDetalle.Add(detalleCompra);
                 context.SaveChanges();
                 return detalleCompra.id;
             }
         }
-        public static int Actualizar(DetalleCompra detalleCompra)
+        public static int Actualizar(CompraDetalle detalleCompra)
         {
             using (var context = new TecnoCell_dbEntities())
             {
-                var det = context.DetalleCompra.Find(detalleCompra.id);
+                var det = context.CompraDetalle.Find(detalleCompra.id);
                 if (det != null)
                 {
                     det.cantidad = detalleCompra.cantidad;
@@ -37,27 +37,27 @@ namespace ClnTecnoCell
         {
             using (var context = new TecnoCell_dbEntities())
             {
-                var detalleCompra = context.DetalleCompra.Find(id);
+                var detalleCompra = context.CompraDetalle.Find(id);
                 if (detalleCompra != null)
                 {
-                    context.DetalleCompra.Remove(detalleCompra);
+                    context.CompraDetalle.Remove(detalleCompra);
                     return context.SaveChanges();
                 }
                 return 0;
             }
         }
-        public static List<DetalleCompra> Listar()
+        public static List<CompraDetalle> Listar()
         {
             using (var context = new TecnoCell_dbEntities())
             {
-                return context.DetalleCompra.ToList();
+                return context.CompraDetalle.ToList();
             }
         }
-        public static DetalleCompra ObtenerPorId(int id)
+        public static CompraDetalle ObtenerPorId(int id)
         {
             using (var context = new TecnoCell_dbEntities())
             {
-                return context.DetalleCompra.Find(id);
+                return context.CompraDetalle.Find(id);
             }
         }
     }
