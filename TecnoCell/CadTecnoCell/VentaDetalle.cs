@@ -19,7 +19,7 @@ namespace CadTecnoCell
         public int idProducto { get; set; }
         public int cantidad { get; set; }
         public decimal precioUnitario { get; set; }
-        public Nullable<decimal> total { get; set; }
+        public Nullable<decimal> subtotal { get; set; }
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }
         public short estado { get; set; }

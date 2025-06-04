@@ -23,27 +23,29 @@ namespace ClnTecnoCell
         {
             using (var context = new TecnoCell_dbEntities())
             {
-                var cli = context.Cliente.Find(cliente.id);
-                if (cli != null)
+                var existente = context.Cliente.Find(cliente.id);
+                if (existente != null)
                 {
-                    cli.nombres = cliente.nombres;
-                    cli.primerApellido = cliente.primerApellido;
-                    cli.segundoApellido = cliente.segundoApellido;
-                    cli.direccion = cliente.direccion;
-                    cli.celular = cliente.celular;
+                    existente.cedulaIdentidad = cliente.cedulaIdentidad;
+                    existente.nombres = cliente.nombres;
+                    existente.apellidos = cliente.apellidos;
+                    existente.direccion = cliente.direccion;
+                    existente.celular = cliente.celular;
+                    existente.usuarioRegistro = cliente.usuarioRegistro;
                     return context.SaveChanges();
                 }
                 return 0;
             }
         }
-        public static int Eliminar(int id)
+        public static int Eliminar(int id, string usuario)
         {
             using (var context = new TecnoCell_dbEntities())
             {
                 var cliente = context.Cliente.Find(id);
                 if (cliente != null)
                 {
-                    context.Cliente.Remove(cliente);
+                    cliente.estado = -1;
+                    cliente.usuarioRegistro = usuario;
                     return context.SaveChanges();
                 }
                 return 0;
@@ -53,14 +55,21 @@ namespace ClnTecnoCell
         {
             using (var context = new TecnoCell_dbEntities())
             {
-                return context.Cliente.ToList();
+                return context.Cliente.Where(x => x.estado != -1).ToList();
             }
         }
-        public static Cliente ObtenerPorId(int id)
+        public static Cliente ObtenerUno(int id)
         {
             using (var context = new TecnoCell_dbEntities())
             {
                 return context.Cliente.Find(id);
+            }
+        }
+        public static List<paClienteListar_Result> ListarPorParametro(string parametro)
+        {
+            using (var context = new TecnoCell_dbEntities())
+            {
+                return context.paClienteListar(parametro).ToList();
             }
         }
     }

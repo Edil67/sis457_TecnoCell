@@ -26,5 +26,20 @@ namespace CpTecnoCell
         {
             new FrmVenta().ShowDialog();
         }
+
+        private void btnCaProductos_Click(object sender, EventArgs e)
+        {
+            new FrmProducto().ShowDialog();
+        }
+
+        private void btnCaCliente_Click(object sender, EventArgs e)
+        {
+            new FrmCliente().ShowDialog();
+        }
+
+        private void btnCaVentaDetalle_Click(object sender, EventArgs e)
+        {
+            new FrmVentaDetalle().ShowDialog();
+        }
     }
 }

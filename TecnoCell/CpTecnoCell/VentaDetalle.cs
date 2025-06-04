@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CpTecnoCell
 {
-    public partial class FrmProducto : Form
+    public partial class FrmVentaDetalle : Form
     {
-        public FrmProducto()
+        public FrmVentaDetalle()
         {
             InitializeComponent();
         }

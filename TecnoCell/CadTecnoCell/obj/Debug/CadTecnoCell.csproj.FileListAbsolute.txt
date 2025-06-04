@@ -34,3 +34,15 @@ D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CadTec
 D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CadTecnoCell\obj\Debug\CadTecno.C93E0724.Up2Date
 D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CadTecnoCell\obj\Debug\CadTecnoCell.dll
 D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CadTecnoCell\obj\Debug\CadTecnoCell.pdb
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CadTecnoCell\bin\Debug\CadTecnoCell.dll.config
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CadTecnoCell\bin\Debug\CadTecnoCell.dll
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CadTecnoCell\bin\Debug\CadTecnoCell.pdb
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CadTecnoCell\bin\Debug\EntityFramework.dll
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CadTecnoCell\bin\Debug\EntityFramework.SqlServer.dll
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CadTecnoCell\bin\Debug\EntityFramework.xml
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CadTecnoCell\bin\Debug\EntityFramework.SqlServer.xml
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CadTecnoCell\obj\Debug\CadTecnoCell.csproj.AssemblyReference.cache
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CadTecnoCell\obj\Debug\CadTecnoCell.csproj.CoreCompileInputs.cache
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CadTecnoCell\obj\Debug\CadTecno.C93E0724.Up2Date
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CadTecnoCell\obj\Debug\CadTecnoCell.dll
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CadTecnoCell\obj\Debug\CadTecnoCell.pdb

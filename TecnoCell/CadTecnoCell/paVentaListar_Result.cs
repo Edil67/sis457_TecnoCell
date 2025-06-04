@@ -11,17 +11,20 @@ namespace CadTecnoCell
 {
     using System;
     
-    public partial class paClienteListar_Result
+    public partial class paVentaListar_Result
     {
         public int id { get; set; }
-        public string cedulaIdentidad { get; set; }
-        public string nombres { get; set; }
-        public string apellidos { get; set; }
-        public string direccion { get; set; }
-        public long celular { get; set; }
-        public string correoElectronico { get; set; }
+        public int idCliente { get; set; }
+        public int idUsuario { get; set; }
+        public string documentoCliente { get; set; }
+        public decimal montoPago { get; set; }
+        public decimal montoCambio { get; set; }
+        public Nullable<decimal> montoTotal { get; set; }
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }
         public short estado { get; set; }
+        public string clienteNombres { get; set; }
+        public string clienteApellidos { get; set; }
+        public string usuarioNombre { get; set; }
     }
 }

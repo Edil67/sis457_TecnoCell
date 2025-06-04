@@ -79,3 +79,34 @@ D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecn
 D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoC.5A2EB229.Up2Date
 D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.exe
 D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.pdb
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\CpTecnoCell.exe.config
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\CpTecnoCell.exe
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\CpTecnoCell.pdb
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\CadTecnoCell.dll
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\ClnTecnoCell.dll
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\EntityFramework.dll
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\EntityFramework.SqlServer.dll
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\CadTecnoCell.pdb
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\CadTecnoCell.dll.config
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\ClnTecnoCell.pdb
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\ClnTecnoCell.dll.config
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\C1.Win.4.5.2.xml
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\C1.Win.Ribbon.4.5.2.xml
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\EntityFramework.xml
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\bin\Debug\EntityFramework.SqlServer.xml
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.csproj.AssemblyReference.cache
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.exe.config
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmCategoria.resources
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmAutenticacion.resources
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmCliente.resources
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmPrincipal.resources
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmProducto.resources
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmVenta.resources
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.Properties.Resources.resources
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.csproj.GenerateResource.cache
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.exe.licenses
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.csproj.CoreCompileInputs.cache
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoC.5A2EB229.Up2Date
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.exe
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.pdb
+E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmVentaDetalle.resources

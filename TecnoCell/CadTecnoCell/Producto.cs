@@ -17,15 +17,13 @@ namespace CadTecnoCell
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Producto()
         {
-            this.CompraDetalle = new HashSet<CompraDetalle>();
             this.VentaDetalle = new HashSet<VentaDetalle>();
         }
     
         public int id { get; set; }
         public int idCategoria { get; set; }
-        public int idProveedor { get; set; }
         public string nombre { get; set; }
-        public string producto { get; set; }
+        public string modelo { get; set; }
         public string marca { get; set; }
         public string color { get; set; }
         public string descripcion { get; set; }
@@ -36,9 +34,6 @@ namespace CadTecnoCell
         public short estado { get; set; }
     
         public virtual Categoria Categoria { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CompraDetalle> CompraDetalle { get; set; }
-        public virtual Proveedor Proveedor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VentaDetalle> VentaDetalle { get; set; }
     }
