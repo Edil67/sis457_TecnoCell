@@ -214,12 +214,13 @@ BEGIN
           LIKE '%' + REPLACE(@parametro, ' ', '%') + '%'
     ORDER BY v.estado DESC, v.fechaRegistro DESC;
 END;
+
+
+EXEC paClienteListar '';
 -- Introduccion de datos
 INSERT INTO Categoria (descripcion)
 VALUES 
-('Celulares'), 
-('Tablets'), 
-('Fundas');
+('Celulares');
 
 INSERT INTO Empleado (nombres, primerApellido, segundoApellido, direccion, celular, cargo)
 VALUES 

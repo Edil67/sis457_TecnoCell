@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static ClnTecnoCell.ProductoCln;
 
 namespace CpTecnoCell
 {
@@ -61,11 +62,13 @@ namespace CpTecnoCell
         }
         private void FrmVenta_Load(object sender, EventArgs e)
         {
+            cbxColorProductoVenta.DataSource = coloresProducto.ListaColores;
+
             txtCedulaIdentidadVenta.KeyPress += Util.onlyNumbers;
-            dgvListaVentas.Columns.Add("id", "Id del Usuario");
+            dgvListaVentas.Columns.Add("cedulaIdentidad", "Cedula Identidad Cliente");
             dgvListaVentas.Columns.Add("nombre", "Nombres");
             dgvListaVentas.Columns.Add("modelo", "Modelo");
-            dgvListaVentas.Columns.Add("marca", "");
+            dgvListaVentas.Columns.Add("marca", "Marca");
             dgvListaVentas.Columns.Add("color", "Color");
             dgvListaVentas.Columns.Add("PrecioVenta", "Precio de Venta");
             dgvListaVentas.Columns.Add("Cantidad", "Cantidad");

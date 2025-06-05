@@ -72,5 +72,14 @@ namespace ClnTecnoCell
                 return context.paProductoListar(parametro).ToList();
             }
         }
+
+        public static class coloresProducto
+        {
+            public static readonly List<string> ListaColores = new List<string>
+           {
+               "Negro", "Blanco", "Rojo", "Azul", "Verde", "Amarillo", "Gris"
+               // Agrega los colores que necesites
+           };
+        }
     }
 }

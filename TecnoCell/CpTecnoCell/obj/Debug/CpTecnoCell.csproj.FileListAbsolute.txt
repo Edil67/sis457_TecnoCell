@@ -110,3 +110,4 @@ E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoC.5A2
 E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.exe
 E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.pdb
 E:\darwin\ING VACA\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmVentaDetalle.resources
+D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TecnoCell\TecnoCell\CpTecnoCell\obj\Debug\CpTecnoCell.FrmVentaDetalle.resources

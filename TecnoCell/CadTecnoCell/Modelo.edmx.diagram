@@ -4,11 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1ac76ef809b9489782d787bdf56b5e7d" Name="Diagram1">
-        <EntityTypeShape EntityType="TecnoCell_dbModel.Categoria" Width="1.5" PointX="11.25" PointY="4.5" IsExpanded="true" />
+      <Diagram DiagramId="d7092bf0510744a7a2a1c6d4c0b02f1d" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="TecnoCell_dbModel.Categoria" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
         <EntityTypeShape EntityType="TecnoCell_dbModel.Cliente" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="TecnoCell_dbModel.Empleado" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TecnoCell_dbModel.Producto" Width="1.5" PointX="8.375" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TecnoCell_dbModel.Producto" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
         <EntityTypeShape EntityType="TecnoCell_dbModel.Usuario" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="TecnoCell_dbModel.Venta" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="TecnoCell_dbModel.VentaDetalle" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />

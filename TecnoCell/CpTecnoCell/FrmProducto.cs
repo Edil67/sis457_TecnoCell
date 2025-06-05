@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static ClnTecnoCell.ProductoCln;
 
 namespace CpTecnoCell
 {
@@ -49,7 +50,7 @@ namespace CpTecnoCell
         private void FrmProducto_Load(object sender, EventArgs e)
         {
             Size = new Size(757, 608);
-            cbxColorProducto.DisplayMember = "color";
+            cbxColorProducto.DataSource = coloresProducto.ListaColores;
             cbxCategoriaProducto.DataSource = CategoriaCln.listar();
             cbxCategoriaProducto.DisplayMember = "descripcion";
             cbxCategoriaProducto.ValueMember = "id";
@@ -230,5 +231,7 @@ namespace CpTecnoCell
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        
     }
 }
