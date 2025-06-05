@@ -35,12 +35,13 @@ namespace CpTecnoCell
 
         private void btnCaProductos_Click(object sender, EventArgs e)
         {
-            new FrmProducto().ShowDialog();
+            var frmProducto = new FrmVenta();
+            new FrmProducto(frmProducto).ShowDialog();
         }
 
         private void btnCaCliente_Click(object sender, EventArgs e)
         {   var frmVenta = new FrmVenta();
-            new FrmCliente().ShowDialog();
+            new FrmCliente(frmVenta).ShowDialog();
         }
 
         private void btnCaVentaDetalle_Click(object sender, EventArgs e)

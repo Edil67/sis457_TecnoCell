@@ -52,7 +52,7 @@ namespace ClnTecnoCell
             }
         }
 
-        public static List<Venta> Listar()
+        public static List<Venta> listar()
         {
             using (var context = new TecnoCell_dbEntities())
             {
@@ -60,7 +60,7 @@ namespace ClnTecnoCell
             }
         }
 
-        public static Venta ObtenerVentaDetalle(int id)
+        public static Venta obtenerVentaDetalle(int id)
         {
             using (var context = new TecnoCell_dbEntities())
             {
@@ -88,7 +88,7 @@ namespace ClnTecnoCell
             }
         }
 
-        public static List<VentaDetalle> ObtenerDetalleVenta(int idVenta)
+        public static List<VentaDetalle> obtenerDetalleVenta(int idVenta)
         {
             using (var context = new TecnoCell_dbEntities())
             {

@@ -16,7 +16,7 @@ namespace CpTecnoCell
     {
         private bool esNuevo = false;
         private FrmVenta frmVenta; // Hace Referencia a FrmVenta
-        public FrmCliente()//FrmVenta frmVenta)
+        public FrmCliente(FrmVenta frmVenta)
         {
             InitializeComponent();
             //this.frmVenta = frmVenta;
@@ -125,7 +125,7 @@ namespace CpTecnoCell
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Size = new Size(732, 608);
+            
             if (validar())
             {
                 var cliente = new Cliente
@@ -175,6 +175,7 @@ namespace CpTecnoCell
                 // Llamar a FrmVenta para actualizar los datos del cliente creado
                 //frmVenta.SetListaCliente(cliente.cedulaIdentidad, cliente.nombres);
                 limpiar();
+                Size = new Size(732, 608);
                 listar();
             }
         }

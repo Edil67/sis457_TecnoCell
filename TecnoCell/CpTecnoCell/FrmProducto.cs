@@ -15,7 +15,7 @@ namespace CpTecnoCell
     public partial class FrmProducto : Form
     {  
         private bool esNuevo = false; 
-        public FrmProducto()
+        public FrmProducto(FrmVenta frmVenta)
         {
             InitializeComponent();
         }
