@@ -57,6 +57,13 @@ namespace ClnTecnoCell
             }
         }
 
+        public static List<paCategoriaListar_Result> listarPa(string parametro)
+        {
+            using (var context = new TecnoCell_dbEntities())
+            {
+                return context.paCategoriaListar(parametro).ToList();
+            }
+        }
 
         public static bool ExisteDescripcion(string descripcion)
         {

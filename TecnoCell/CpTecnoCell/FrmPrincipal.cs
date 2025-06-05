@@ -12,6 +12,12 @@ namespace CpTecnoCell
 {
     public partial class FrmPrincipal : Form
     {
+        private FrmAutenticacion frmAutenticacion;
+        public FrmPrincipal(FrmAutenticacion frmAutenticacion)
+        {
+            InitializeComponent();
+            this.frmAutenticacion = frmAutenticacion;
+        }
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -33,7 +39,7 @@ namespace CpTecnoCell
         }
 
         private void btnCaCliente_Click(object sender, EventArgs e)
-        {
+        {   var frmVenta = new FrmVenta();
             new FrmCliente().ShowDialog();
         }
 

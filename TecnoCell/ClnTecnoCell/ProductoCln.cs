@@ -8,7 +8,7 @@ namespace ClnTecnoCell
 {
     public class ProductoCln
     {
-        public static int Insertar(Producto producto)
+        public static int insertar(Producto producto)
         {
             using (var context = new TecnoCell_dbEntities())
             {
@@ -18,7 +18,7 @@ namespace ClnTecnoCell
             }
         }
 
-        public static int Actualizar(Producto producto)
+        public static int actualizar(Producto producto)
         {
             using (var context = new TecnoCell_dbEntities())
             {
@@ -38,7 +38,7 @@ namespace ClnTecnoCell
             }
         }
 
-        public static int Eliminar(int id, string usuario)
+        public static int eliminar(int id, string usuario)
         {
             using (var context = new TecnoCell_dbEntities())
             {
@@ -57,7 +57,7 @@ namespace ClnTecnoCell
             }
         }
 
-        public static Producto ObtenerUno(int id)
+        public static Producto obtenerUno(int id)
         {
             using (var context = new TecnoCell_dbEntities())
             {

@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtDocumentoCliente = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
+            this.txtCedulaIdentidadCliente = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtTelefonoCliente = new System.Windows.Forms.TextBox();
-            this.txtCorreoCliente = new System.Windows.Forms.TextBox();
-            this.txtNombreCompleto = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lbl = new System.Windows.Forms.Label();
+            this.txtCelularCliente = new System.Windows.Forms.TextBox();
+            this.txtCorreoClienteCliente = new System.Windows.Forms.TextBox();
+            this.txtNombresCliente = new System.Windows.Forms.TextBox();
+            this.lblCelularCliente = new System.Windows.Forms.Label();
+            this.lblCorreoElectronicoCliente = new System.Windows.Forms.Label();
+            this.lblNombresCliente = new System.Windows.Forms.Label();
+            this.lblCedulaIdentidadCliente = new System.Windows.Forms.Label();
             this.dgvListaCliente = new System.Windows.Forms.DataGridView();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -45,29 +46,45 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.txtParametroCliente = new System.Windows.Forms.TextBox();
             this.fondo = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblTituloCLiente = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.gbxLista = new System.Windows.Forms.GroupBox();
+            this.lblApellidosCliente = new System.Windows.Forms.Label();
+            this.txtApellidosCliente = new System.Windows.Forms.TextBox();
+            this.txtDireccionCliente = new System.Windows.Forms.TextBox();
+            this.lblDireccionCliente = new System.Windows.Forms.Label();
+            this.erpCorreoElectronicoCliente = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpCedulaIdentidadCliente = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpNombresCliente = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpApellidosCliente = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpDireccionCliente = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpCelularCliente = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCliente)).BeginInit();
             this.gbxLista.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erpCorreoElectronicoCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpCedulaIdentidadCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpNombresCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpApellidosCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDireccionCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpCelularCliente)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtDocumentoCliente
+            // txtCedulaIdentidadCliente
             // 
-            this.txtDocumentoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocumentoCliente.Location = new System.Drawing.Point(746, 200);
-            this.txtDocumentoCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDocumentoCliente.Name = "txtDocumentoCliente";
-            this.txtDocumentoCliente.Size = new System.Drawing.Size(235, 22);
-            this.txtDocumentoCliente.TabIndex = 182;
+            this.txtCedulaIdentidadCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCedulaIdentidadCliente.Location = new System.Drawing.Point(740, 135);
+            this.txtCedulaIdentidadCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCedulaIdentidadCliente.Name = "txtCedulaIdentidadCliente";
+            this.txtCedulaIdentidadCliente.Size = new System.Drawing.Size(235, 22);
+            this.txtCedulaIdentidadCliente.TabIndex = 182;
             // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(599, 92);
+            this.btnBuscar.Location = new System.Drawing.Point(599, 78);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(107, 34);
@@ -75,73 +92,74 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // txtTelefonoCliente
+            // txtCelularCliente
             // 
-            this.txtTelefonoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefonoCliente.Location = new System.Drawing.Point(746, 343);
-            this.txtTelefonoCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTelefonoCliente.Name = "txtTelefonoCliente";
-            this.txtTelefonoCliente.Size = new System.Drawing.Size(235, 22);
-            this.txtTelefonoCliente.TabIndex = 180;
+            this.txtCelularCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCelularCliente.Location = new System.Drawing.Point(743, 360);
+            this.txtCelularCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCelularCliente.Name = "txtCelularCliente";
+            this.txtCelularCliente.Size = new System.Drawing.Size(235, 22);
+            this.txtCelularCliente.TabIndex = 180;
             // 
-            // txtCorreoCliente
+            // txtCorreoClienteCliente
             // 
-            this.txtCorreoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreoCliente.Location = new System.Drawing.Point(746, 296);
-            this.txtCorreoCliente.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCorreoCliente.Name = "txtCorreoCliente";
-            this.txtCorreoCliente.Size = new System.Drawing.Size(235, 22);
-            this.txtCorreoCliente.TabIndex = 179;
+            this.txtCorreoClienteCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreoClienteCliente.Location = new System.Drawing.Point(740, 411);
+            this.txtCorreoClienteCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCorreoClienteCliente.Name = "txtCorreoClienteCliente";
+            this.txtCorreoClienteCliente.Size = new System.Drawing.Size(235, 22);
+            this.txtCorreoClienteCliente.TabIndex = 179;
             // 
-            // txtNombreCompleto
+            // txtNombresCliente
             // 
-            this.txtNombreCompleto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreCompleto.Location = new System.Drawing.Point(746, 251);
-            this.txtNombreCompleto.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNombreCompleto.Name = "txtNombreCompleto";
-            this.txtNombreCompleto.Size = new System.Drawing.Size(236, 22);
-            this.txtNombreCompleto.TabIndex = 178;
+            this.txtNombresCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombresCliente.Location = new System.Drawing.Point(740, 186);
+            this.txtNombresCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombresCliente.Name = "txtNombresCliente";
+            this.txtNombresCliente.Size = new System.Drawing.Size(236, 22);
+            this.txtNombresCliente.TabIndex = 178;
             // 
-            // label7
+            // lblCelularCliente
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(745, 318);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 21);
-            this.label7.TabIndex = 177;
-            this.label7.Text = "Teléfono:";
+            this.lblCelularCliente.AutoSize = true;
+            this.lblCelularCliente.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCelularCliente.Location = new System.Drawing.Point(739, 335);
+            this.lblCelularCliente.Name = "lblCelularCliente";
+            this.lblCelularCliente.Size = new System.Drawing.Size(68, 21);
+            this.lblCelularCliente.TabIndex = 177;
+            this.lblCelularCliente.Text = "Celular:";
             // 
-            // label6
+            // lblCorreoElectronicoCliente
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(745, 271);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 21);
-            this.label6.TabIndex = 176;
-            this.label6.Text = "Email:";
+            this.lblCorreoElectronicoCliente.AutoSize = true;
+            this.lblCorreoElectronicoCliente.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorreoElectronicoCliente.Location = new System.Drawing.Point(739, 386);
+            this.lblCorreoElectronicoCliente.Name = "lblCorreoElectronicoCliente";
+            this.lblCorreoElectronicoCliente.Size = new System.Drawing.Size(155, 21);
+            this.lblCorreoElectronicoCliente.TabIndex = 176;
+            this.lblCorreoElectronicoCliente.Text = "Correo Electronico:";
             // 
-            // label5
+            // lblNombresCliente
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(745, 226);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(156, 21);
-            this.label5.TabIndex = 175;
-            this.label5.Text = "Nombre Completo:";
+            this.lblNombresCliente.AutoSize = true;
+            this.lblNombresCliente.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombresCliente.Location = new System.Drawing.Point(739, 161);
+            this.lblNombresCliente.Name = "lblNombresCliente";
+            this.lblNombresCliente.Size = new System.Drawing.Size(84, 21);
+            this.lblNombresCliente.TabIndex = 175;
+            this.lblNombresCliente.Text = "Nombres:";
             // 
-            // lbl
+            // lblCedulaIdentidadCliente
             // 
-            this.lbl.AutoSize = true;
-            this.lbl.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.Location = new System.Drawing.Point(745, 179);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(127, 21);
-            this.lbl.TabIndex = 174;
-            this.lbl.Text = "N° Documento:";
+            this.lblCedulaIdentidadCliente.AutoSize = true;
+            this.lblCedulaIdentidadCliente.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCedulaIdentidadCliente.Location = new System.Drawing.Point(739, 114);
+            this.lblCedulaIdentidadCliente.Name = "lblCedulaIdentidadCliente";
+            this.lblCedulaIdentidadCliente.Size = new System.Drawing.Size(141, 21);
+            this.lblCedulaIdentidadCliente.TabIndex = 174;
+            this.lblCedulaIdentidadCliente.Text = "Cedula Identidad";
             // 
             // dgvListaCliente
             // 
@@ -172,6 +190,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -186,6 +205,7 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnEliminar
             // 
@@ -200,6 +220,7 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnCerrar
             // 
@@ -214,6 +235,7 @@
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnEditar
             // 
@@ -228,12 +250,13 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // txtParametroCliente
             // 
             this.txtParametroCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtParametroCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtParametroCliente.Location = new System.Drawing.Point(278, 92);
+            this.txtParametroCliente.Location = new System.Drawing.Point(278, 78);
             this.txtParametroCliente.Name = "txtParametroCliente";
             this.txtParametroCliente.Size = new System.Drawing.Size(314, 28);
             this.txtParametroCliente.TabIndex = 168;
@@ -242,7 +265,7 @@
             // 
             this.fondo.BackColor = System.Drawing.Color.Silver;
             this.fondo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fondo.Location = new System.Drawing.Point(11, 85);
+            this.fondo.Location = new System.Drawing.Point(11, 71);
             this.fondo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.fondo.Name = "fondo";
             this.fondo.Size = new System.Drawing.Size(701, 49);
@@ -250,15 +273,15 @@
             this.fondo.Text = "Buscar por Documento o Nombre:";
             this.fondo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label2
+            // lblTituloCLiente
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(767, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 29);
-            this.label2.TabIndex = 166;
-            this.label2.Text = "Detalle Cliente";
+            this.lblTituloCLiente.AutoSize = true;
+            this.lblTituloCLiente.Font = new System.Drawing.Font("Arial Narrow", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloCLiente.Location = new System.Drawing.Point(769, 71);
+            this.lblTituloCLiente.Name = "lblTituloCLiente";
+            this.lblTituloCLiente.Size = new System.Drawing.Size(147, 29);
+            this.lblTituloCLiente.TabIndex = 166;
+            this.lblTituloCLiente.Text = "Detalle Cliente";
             // 
             // btnNuevo
             // 
@@ -273,6 +296,7 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // lblTitulo
             // 
@@ -301,21 +325,87 @@
             this.gbxLista.TabStop = false;
             this.gbxLista.Text = "Lista de Clientes";
             // 
+            // lblApellidosCliente
+            // 
+            this.lblApellidosCliente.AutoSize = true;
+            this.lblApellidosCliente.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellidosCliente.Location = new System.Drawing.Point(739, 223);
+            this.lblApellidosCliente.Name = "lblApellidosCliente";
+            this.lblApellidosCliente.Size = new System.Drawing.Size(86, 21);
+            this.lblApellidosCliente.TabIndex = 183;
+            this.lblApellidosCliente.Text = "Apellidos:";
+            // 
+            // txtApellidosCliente
+            // 
+            this.txtApellidosCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellidosCliente.Location = new System.Drawing.Point(743, 248);
+            this.txtApellidosCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtApellidosCliente.Name = "txtApellidosCliente";
+            this.txtApellidosCliente.Size = new System.Drawing.Size(236, 22);
+            this.txtApellidosCliente.TabIndex = 184;
+            // 
+            // txtDireccionCliente
+            // 
+            this.txtDireccionCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDireccionCliente.Location = new System.Drawing.Point(743, 308);
+            this.txtDireccionCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDireccionCliente.Name = "txtDireccionCliente";
+            this.txtDireccionCliente.Size = new System.Drawing.Size(236, 22);
+            this.txtDireccionCliente.TabIndex = 186;
+            // 
+            // lblDireccionCliente
+            // 
+            this.lblDireccionCliente.AutoSize = true;
+            this.lblDireccionCliente.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDireccionCliente.Location = new System.Drawing.Point(739, 283);
+            this.lblDireccionCliente.Name = "lblDireccionCliente";
+            this.lblDireccionCliente.Size = new System.Drawing.Size(87, 21);
+            this.lblDireccionCliente.TabIndex = 185;
+            this.lblDireccionCliente.Text = "Direccion:";
+            // 
+            // erpCorreoElectronicoCliente
+            // 
+            this.erpCorreoElectronicoCliente.ContainerControl = this;
+            // 
+            // erpCedulaIdentidadCliente
+            // 
+            this.erpCedulaIdentidadCliente.ContainerControl = this;
+            // 
+            // erpNombresCliente
+            // 
+            this.erpNombresCliente.ContainerControl = this;
+            // 
+            // erpApellidosCliente
+            // 
+            this.erpApellidosCliente.ContainerControl = this;
+            // 
+            // erpDireccionCliente
+            // 
+            this.erpDireccionCliente.ContainerControl = this;
+            // 
+            // erpCelularCliente
+            // 
+            this.erpCelularCliente.ContainerControl = this;
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(997, 569);
-            this.Controls.Add(this.txtDocumentoCliente);
+            this.Controls.Add(this.txtDireccionCliente);
+            this.Controls.Add(this.lblDireccionCliente);
+            this.Controls.Add(this.txtApellidosCliente);
+            this.Controls.Add(this.lblApellidosCliente);
+            this.Controls.Add(this.txtCedulaIdentidadCliente);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.txtTelefonoCliente);
-            this.Controls.Add(this.txtCorreoCliente);
-            this.Controls.Add(this.txtNombreCompleto);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.lbl);
+            this.Controls.Add(this.txtCelularCliente);
+            this.Controls.Add(this.txtCorreoClienteCliente);
+            this.Controls.Add(this.txtNombresCliente);
+            this.Controls.Add(this.lblCelularCliente);
+            this.Controls.Add(this.lblCorreoElectronicoCliente);
+            this.Controls.Add(this.lblNombresCliente);
+            this.Controls.Add(this.lblCedulaIdentidadCliente);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEliminar);
@@ -323,15 +413,23 @@
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.txtParametroCliente);
             this.Controls.Add(this.fondo);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblTituloCLiente);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.gbxLista);
             this.Name = "FrmCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "::: TecnoCell - Cliente :::";
+            this.Load += new System.EventHandler(this.FrmCliente_Load);
+            this.Click += new System.EventHandler(this.FrmCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCliente)).EndInit();
             this.gbxLista.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.erpCorreoElectronicoCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpCedulaIdentidadCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpNombresCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpApellidosCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDireccionCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpCelularCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,15 +437,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtDocumentoCliente;
+        private System.Windows.Forms.TextBox txtCedulaIdentidadCliente;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox txtTelefonoCliente;
-        private System.Windows.Forms.TextBox txtCorreoCliente;
-        private System.Windows.Forms.TextBox txtNombreCompleto;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lbl;
+        private System.Windows.Forms.TextBox txtCelularCliente;
+        private System.Windows.Forms.TextBox txtCorreoClienteCliente;
+        private System.Windows.Forms.TextBox txtNombresCliente;
+        private System.Windows.Forms.Label lblCelularCliente;
+        private System.Windows.Forms.Label lblCorreoElectronicoCliente;
+        private System.Windows.Forms.Label lblNombresCliente;
+        private System.Windows.Forms.Label lblCedulaIdentidadCliente;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnEliminar;
@@ -355,10 +453,20 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.TextBox txtParametroCliente;
         private System.Windows.Forms.Label fondo;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblTituloCLiente;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.GroupBox gbxLista;
         private System.Windows.Forms.DataGridView dgvListaCliente;
+        private System.Windows.Forms.Label lblApellidosCliente;
+        private System.Windows.Forms.TextBox txtApellidosCliente;
+        private System.Windows.Forms.TextBox txtDireccionCliente;
+        private System.Windows.Forms.Label lblDireccionCliente;
+        private System.Windows.Forms.ErrorProvider erpCorreoElectronicoCliente;
+        private System.Windows.Forms.ErrorProvider erpCedulaIdentidadCliente;
+        private System.Windows.Forms.ErrorProvider erpNombresCliente;
+        private System.Windows.Forms.ErrorProvider erpApellidosCliente;
+        private System.Windows.Forms.ErrorProvider erpDireccionCliente;
+        private System.Windows.Forms.ErrorProvider erpCelularCliente;
     }
 }

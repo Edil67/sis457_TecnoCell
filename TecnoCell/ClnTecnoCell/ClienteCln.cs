@@ -10,7 +10,7 @@ namespace ClnTecnoCell
 {
     public class ClienteCln
     {
-        public static int Insertar(Cliente cliente)
+        public static int insertar(Cliente cliente)
         {
             using (var context = new TecnoCell_dbEntities())
             {
@@ -19,10 +19,15 @@ namespace ClnTecnoCell
                 return cliente.id;
             }
         }
-        public static int Actualizar(Cliente cliente)
+        public static int actualizar(Cliente cliente)
         {
             using (var context = new TecnoCell_dbEntities())
             {
+                // Validar duplicidad antes de actualizar
+                if (context.Cliente.Any(c => c.cedulaIdentidad == cliente.cedulaIdentidad && c.id != cliente.id && c.estado != -1))
+                {
+                    throw new InvalidOperationException("Ya existe un cliente con la misma cédula de identidad.");
+                }
                 var existente = context.Cliente.Find(cliente.id);
                 if (existente != null)
                 {
@@ -37,7 +42,7 @@ namespace ClnTecnoCell
                 return 0;
             }
         }
-        public static int Eliminar(int id, string usuario)
+        public static int eliminar(int id, string usuario)
         {
             using (var context = new TecnoCell_dbEntities())
             {
@@ -51,25 +56,33 @@ namespace ClnTecnoCell
                 return 0;
             }
         }
-        public static List<Cliente> Listar()
+        public static List<Cliente> listar()
         {
             using (var context = new TecnoCell_dbEntities())
             {
                 return context.Cliente.Where(x => x.estado != -1).ToList();
             }
         }
-        public static Cliente ObtenerUno(int id)
+        public static Cliente obtenerUno(int id)
         {
             using (var context = new TecnoCell_dbEntities())
             {
                 return context.Cliente.Find(id);
             }
         }
-        public static List<paClienteListar_Result> ListarPorParametro(string parametro)
+        public static List<paClienteListar_Result> listarPa(string parametro)
         {
             using (var context = new TecnoCell_dbEntities())
             {
                 return context.paClienteListar(parametro).ToList();
+            }
+        }
+
+        public static bool existeDocumento(string cedulaidentidad)
+        {
+            using (var context = new TecnoCell_dbEntities())
+            {
+                return context.Cliente.Any(c => c.cedulaIdentidad == cedulaidentidad && c.estado != -1);
             }
         }
     }

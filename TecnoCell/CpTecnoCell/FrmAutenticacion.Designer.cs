@@ -64,6 +64,7 @@
             this.btnSalir.TabIndex = 24;
             this.btnSalir.Text = "SALIR";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnIngresar
             // 
@@ -81,6 +82,7 @@
             this.btnIngresar.TabIndex = 23;
             this.btnIngresar.Text = "INGRESAR";
             this.btnIngresar.UseVisualStyleBackColor = false;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // txtClave
             // 
@@ -209,7 +211,6 @@
             this.Name = "FrmAutenticacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "::: TecnoCell - Autenticacion :::";
-            this.Load += new System.EventHandler(this.FrmAutenticacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.erpUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erpClave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
