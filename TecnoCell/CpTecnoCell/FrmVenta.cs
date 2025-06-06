@@ -64,7 +64,7 @@ namespace CpTecnoCell
         {
             cbxColorProductoVenta.DataSource = coloresProducto.ListaColores;
 
-            txtCedulaIdentidadVenta.KeyPress += Util.onlyNumbers;
+            //txtCedulaIdentidadVenta.KeyPress += Util.onlyNumbers;
             dgvListaVentas.Columns.Add("cedulaIdentidad", "Cedula Identidad Cliente");
             dgvListaVentas.Columns.Add("nombre", "Nombres");
             dgvListaVentas.Columns.Add("modelo", "Modelo");
@@ -225,7 +225,7 @@ namespace CpTecnoCell
 
                         // Actualizar la cantidad y el total
                         row.Cells["Cantidad"].Value = nuevaCantidad;
-                        row.Cells["Total"].Value = nuevaCantidad * producto.precioVenta;
+                        row.Cells["montototal"].Value = nuevaCantidad * producto.precioVenta;
 
                         // Recalcular el total a pagar
                         CalcularTotalPagar();
@@ -252,7 +252,18 @@ namespace CpTecnoCell
                 var usuarioRegistro = Util.usuario.usuario1;
                 var fechaRegistro = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
 
-                dgvListaVentas.Rows.Add(id, codigo, nombre, modelo, marca, color, precioVenta, cantidadVenta, montototal, usuarioRegistro, fechaRegistro);
+                dgvListaVentas.Rows.Add(
+                    txtCedulaIdentidadVenta.Text, // cedulaIdentidad
+                    txtNombreClienteVenta.Text,   // nombre
+                    modelo,                       // modelo
+                    marca,                        // marca
+                    color,                        // color
+                    precioVenta,                  // PrecioVenta
+                    cantidadVenta,                // Cantidad
+                    montototal,                   // montoTotal
+                    usuarioRegistro,              // usuarioRegistro
+                    fechaRegistro
+                );
 
                 LimpiarCampos();
                 CalcularTotalPagar();
@@ -274,8 +285,8 @@ namespace CpTecnoCell
 
             foreach (DataGridViewRow row in dgvListaVentas.Rows)
             {
-                if (row.Cells["Total"].Value != null &&
-                    decimal.TryParse(row.Cells["Total"].Value.ToString(), out decimal total))
+                if (row.Cells["montoTotal"].Value != null &&
+                    decimal.TryParse(row.Cells["montoTotal"].Value.ToString(), out decimal total))
                 {
                     totalPagar += total;
                 }
@@ -306,12 +317,14 @@ namespace CpTecnoCell
         {
             try
             {
-                // Validar campos obligatorios
-                if (string.IsNullOrEmpty(txtCedulaIdentidadVenta.Text) || string.IsNullOrEmpty(txtNombreClienteVenta.Text) ||
-                    string.IsNullOrEmpty(txtModeloProductoVenta.Text) || string.IsNullOrEmpty(txtMontoPagoVentaDetalle.Text) ||
+                // Validar campos obligatorios y que haya productos en la venta
+                if (string.IsNullOrEmpty(txtCedulaIdentidadVenta.Text) ||
+                    string.IsNullOrEmpty(txtNombreClienteVenta.Text) ||
+                    dgvListaVentas.Rows.Count == 0 ||
+                    string.IsNullOrEmpty(txtMontoPagoVentaDetalle.Text) ||
                     string.IsNullOrEmpty(txtMontoCambioVentaDetalle.Text))
                 {
-                    MessageBox.Show("Por favor, complete todos los campos requeridos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Por favor, complete todos los campos requeridos y agregue al menos un producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -328,7 +341,6 @@ namespace CpTecnoCell
                 {
                     var venta = new Venta
                     {
-                        idUsuario = idEmpleado,
                         id = idEmpleado,
                         documentoCliente = txtCedulaIdentidadVenta.Text.Trim(),
                         montoPago = decimal.Parse(txtMontoPagoVentaDetalle.Text.Trim()),
@@ -342,7 +354,6 @@ namespace CpTecnoCell
                     context.Venta.Add(venta);
                     context.SaveChanges(); // Guardar para generar el ID de la venta
 
-                    // Obtener el ID de la venta recién registrada
                     int idVenta = venta.id;
 
                     // Registrar los detalles de la venta y actualizar el stock
@@ -353,12 +364,10 @@ namespace CpTecnoCell
                             string codigoProducto = row.Cells["Modelo"].Value.ToString();
                             int cantidadVendida = Convert.ToInt32(row.Cells["Cantidad"].Value);
 
-                            // Obtener producto por código
                             var producto = context.Producto.FirstOrDefault(p => p.modelo == codigoProducto);
 
                             if (producto != null)
                             {
-                                // Actualizar stock del producto
                                 producto.stock -= cantidadVendida;
 
                                 if (producto.stock < 0)
@@ -367,14 +376,12 @@ namespace CpTecnoCell
                                     return;
                                 }
 
-                                // Registrar el detalle de la venta
                                 var detalleVenta = new VentaDetalle
                                 {
-                                    id = idVenta,
+                                    idVenta = idVenta,
                                     idProducto = producto.id,
                                     cantidad = cantidadVendida,
                                     precioUnitario = producto.precioVenta,
-                                    subtotal = producto.precioVenta * cantidadVendida,
                                     usuarioRegistro = Util.usuario.usuario1,
                                     fechaRegistro = DateTime.Now,
                                     estado = 1
@@ -385,19 +392,15 @@ namespace CpTecnoCell
                         }
                     }
 
-                    // Guardar todos los cambios (venta, detalles, stock)
                     context.SaveChanges();
 
-                    // Notificar al usuario
                     MessageBox.Show("Venta registrada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    // Limpiar formulario
                     LimpiarFormularioVenta();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ocurrió un error al registrar la venta: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ocurrió un error al registrar la venta: {ex.Message}\n{ex.InnerException?.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -420,18 +423,6 @@ namespace CpTecnoCell
             txtMontoCambioVentaDetalle.Clear();
             dgvListaVentas.Rows.Clear();
         }
-
-        private int GetProductoIdByCodigo(string codigoProducto)
-        {
-            using (var context = new TecnoCell_dbEntities())
-            {
-                var producto = context.Producto.FirstOrDefault(p => p.modelo == codigoProducto);
-                return producto != null ? producto.id : 0;
-            }
-        }
-
-
-
 
 
 

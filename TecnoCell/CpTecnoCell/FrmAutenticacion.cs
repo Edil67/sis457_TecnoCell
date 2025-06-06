@@ -16,6 +16,11 @@ namespace CpTecnoCell
         public FrmAutenticacion()
         {
             InitializeComponent();
+            string claveEncriptada = CpTecnoCell.Util.Encrypt("123456");
+            Clipboard.SetText(claveEncriptada);
+
+
+
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -29,13 +34,13 @@ namespace CpTecnoCell
             erpClave.SetError(txtClave, "");
             if (string.IsNullOrEmpty(txtUsuario.Text))
             {
-                esValido = false;
                 erpUsuario.SetError(txtUsuario, "El campo Usuario es obligatorio");
+                esValido = false;
             }
             if (string.IsNullOrEmpty(txtClave.Text))
             {
-                esValido = false;
                 erpClave.SetError(txtClave, "El campo Contraseña es obligatorio");
+                esValido = false;
             }
             return esValido;
         }
@@ -48,10 +53,10 @@ namespace CpTecnoCell
                 if (usuario != null)
                 {
                     Util.usuario = usuario;
-                    txtClave.Text = string.Empty;
+                    txtClave.Clear();
                     txtUsuario.Focus();
                     txtUsuario.SelectAll();
-                    Visible = false;
+                    Hide();
                     new FrmPrincipal(this).ShowDialog();
                 }
                 else MessageBox.Show("Usuario y/o contraseña incorrecto", "::: TecnoCell - Mensaje :::",

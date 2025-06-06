@@ -36,6 +36,7 @@ namespace CpTecnoCell
             dgvListaProducto.Columns["descripcion"].HeaderText = "Descripción";
             dgvListaProducto.Columns["precioVenta"].HeaderText = "Precio de Venta";
             dgvListaProducto.Columns["stock"].HeaderText = "Stock";
+            dgvListaProducto.Columns["categoriaDescripcion"].HeaderText = "Categoria";
 
 
             // Habilitar los botones si se encontró al menos un producto
@@ -50,7 +51,7 @@ namespace CpTecnoCell
         private void FrmProducto_Load(object sender, EventArgs e)
         {
             Size = new Size(757, 608);
-            cbxColorProducto.DataSource = coloresProducto.ListaColores;
+
             cbxCategoriaProducto.DataSource = CategoriaCln.listar();
             cbxCategoriaProducto.DisplayMember = "descripcion";
             cbxCategoriaProducto.ValueMember = "id";
@@ -68,6 +69,8 @@ namespace CpTecnoCell
             esNuevo = true;
             Size = new Size(1023, 608);
             limpiar();
+
+            cbxColorProducto.DataSource = coloresProducto.ListaColores;
 
         }
 

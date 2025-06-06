@@ -46,7 +46,8 @@ namespace CpTecnoCell
 
         private void btnCaVentaDetalle_Click(object sender, EventArgs e)
         {
-            new FrmVentaDetalle().ShowDialog();
+            var frmVenta = new FrmVenta();
+            new FrmVentaDetalle(frmVenta).ShowDialog();
         }
     }
 }

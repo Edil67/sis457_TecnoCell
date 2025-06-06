@@ -233,7 +233,7 @@ VALUES
 ('1234567890', 'Ana', 'López', 'Calle Falsa 456', 987654321, 'prueba@gmail.com');
 INSERT INTO Usuario (idEmpleado, usuario, clave)
 VALUES 
-(1, 'juanperez', '123456');
+(1, 'juanperez', 'Bwk06E2GcnE7m+nHi+A3IA==');
 INSERT INTO Venta (idCliente, idUsuario, documentoCliente, montoPago, montoCambio)
 VALUES 
 (1, 1, '1234567890', 1000, 500);
