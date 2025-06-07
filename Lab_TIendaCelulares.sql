@@ -1,14 +1,14 @@
-﻿CREATE DATABASE TecnoCell_db;
+﻿CREATE DATABASE LabTiendaCelulares;
 
 GO
 USE [master]
 GO
 CREATE LOGIN [usrtecnocell] WITH PASSWORD = N'123456',
-    DEFAULT_DATABASE = [TecnoCell_db],
+    DEFAULT_DATABASE = [LabTiendaCelulares],
     CHECK_EXPIRATION = OFF,
     CHECK_POLICY = ON
 GO
-USE [TecnoCell_db]
+USE [LabTiendaCelulares]
 GO
 CREATE USER [usrtecnocell] FOR LOGIN [usrtecnocell]
 GO

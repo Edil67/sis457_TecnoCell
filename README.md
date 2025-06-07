@@ -1,52 +1,149 @@
-# sis457_TecnoCell
-# [TecnoCell]
+ TecnoSucre – Sistema de Gestión para Tienda de Celulares
+Bienvenido/a a TecnoCell, una tienda especializada en la venta de celulares nuevos, originales y con garantía. Este sistema está diseñado para gestionar eficientemente las operaciones comerciales de la tienda.
 
-¡Bienvenido/a a [TecnoCell]!
+🧾 ¿Qué ofrece TecnoSucre?
+Celulares nuevos y 100% originales
 
-Somos una tienda especializada en la venta de **celulares nuevos, originales y con garantía**. Contamos con una amplia variedad de modelos de las mejores marcas del mercado, adaptados a todos los gustos y presupuestos.
+Precios competitivos
 
+Garantía incluida en todos los equipos
 
-## ¿Qué ofrecemos?
+Asesoría personalizada al cliente
 
--  Celulares nuevos y 100% originales
--  Precios competitivos
--  Garantía en todos los equipos
--  Asesoría personalizada 
+🗂️ Modelo de Base de Datos
+El sistema está compuesto por las siguientes tablas principales:
+🗂️ Modelo de Base de Datos
+📦 Entidades Iniciales
+1. Categoria
+id
 
-## Entidades Iniciales
+descripcion
 
-# Modelo
-- id_Modelo
-- nombreModelo 
-- modeloProducto
-- marca
-- descripcio
-- color
+usuarioRegistro
 
-# Producto
-- id 
-- idModelo 
-- descripcion 
-- precioVenta 
-- stock 
+fechaRegistro
 
-# Cliente
-- id_Cliente 
-- nombres 
-- apellidos 
-- direccion 
-- celular 
+estado
 
-# Compra
-- id 
-- idCliente 
-- fechaCompra 
-- totalCompra 
+2. Producto
+id
 
-# DetalleCompra
-- id 
-- idCompra 
-- idProducto 
-- cantidad
-- precioUnitario 
-- total 
+idCategoria
+
+nombre
+
+modelo
+
+marca
+
+color
+
+descripcion
+
+precioVenta
+
+stock
+
+usuarioRegistro
+
+fechaRegistro
+
+estado
+
+3. Cliente
+id
+
+cedulaIdentidad
+
+nombres
+
+apellidos
+
+direccion
+
+celular
+
+correoElectronico
+
+usuarioRegistro
+
+fechaRegistro
+
+estado
+
+4. Empleado
+id
+
+nombres
+
+primerApellido
+
+segundoApellido
+
+direccion
+
+celular
+
+cargo
+
+usuarioRegistro
+
+fechaRegistro
+
+estado
+
+5. Usuario
+id
+
+idEmpleado
+
+usuario
+
+clave
+
+usuarioRegistro
+
+fechaRegistro
+
+estado
+
+6. Venta
+id
+
+idCliente
+
+idUsuario
+
+documentoCliente
+
+montoPago
+
+montoCambio
+
+montoTotal
+
+usuarioRegistro
+
+fechaRegistro
+
+estado
+
+7. VentaDetalle
+id
+
+idVenta
+
+idProducto
+
+cantidad
+
+precioUnitario
+
+subtotal
+
+usuarioRegistro
+
+fechaRegistro
+
+estado
+
