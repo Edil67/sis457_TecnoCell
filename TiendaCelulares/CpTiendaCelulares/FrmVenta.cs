@@ -73,8 +73,8 @@ namespace CpTecnoCell
             dgvListaVentas.Columns.Add("PrecioVenta", "Precio de Venta");
             dgvListaVentas.Columns.Add("Cantidad", "Cantidad");
             dgvListaVentas.Columns.Add("montoTotal", "Total");
-            dgvListaVentas.Columns.Add("usuarioRegistro", "Usuario de Registro");
-            dgvListaVentas.Columns.Add("fechaRegistro", "Fecha de Registro"); // Nueva columna
+            dgvListaVentas.Columns.Add("usuarioRegistro", "Usuario Registro");
+            dgvListaVentas.Columns.Add("fechaRegistro", "Fecha Registro"); // Nueva columna
 
         }
 
@@ -251,7 +251,7 @@ namespace CpTecnoCell
 
                         // Actualizar la cantidad y el total
                         row.Cells["Cantidad"].Value = nuevaCantidad;
-                        row.Cells["montototal"].Value = nuevaCantidad * producto.precioVenta;
+                        row.Cells["montoTotal"].Value = nuevaCantidad * producto.precioVenta;
 
                         // Recalcular el total a pagar
                         CalcularTotalPagar();
@@ -411,7 +411,6 @@ namespace CpTecnoCell
 
                 int idVenta = venta.id;
 
-                // Registrar los detalles de la venta y actualizar el stock
                 foreach (DataGridViewRow row in dgvListaVentas.Rows)
                 {
                     if (row.Cells["Modelo"].Value != null && row.Cells["Cantidad"].Value != null)
@@ -428,9 +427,9 @@ namespace CpTecnoCell
 
                         // Actualizar stock
                         producto.stock -= cantidad;
-                        if (producto.stock < 0)
+                        if (producto.stock == 1)
                         {
-                            MessageBox.Show($"El stock del producto {producto.nombre} no puede ser negativo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show($"El stock del producto {producto.nombre} esta bajo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
 

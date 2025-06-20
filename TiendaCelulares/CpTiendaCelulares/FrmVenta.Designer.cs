@@ -129,6 +129,7 @@
             this.txtNombreProductoVenta.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreProductoVenta.MaxLength = 150;
             this.txtNombreProductoVenta.Name = "txtNombreProductoVenta";
+            this.txtNombreProductoVenta.ReadOnly = true;
             this.txtNombreProductoVenta.Size = new System.Drawing.Size(147, 26);
             this.txtNombreProductoVenta.TabIndex = 3;
             // 
@@ -167,6 +168,7 @@
             this.txtModeloProductoVenta.Margin = new System.Windows.Forms.Padding(2);
             this.txtModeloProductoVenta.MaxLength = 50;
             this.txtModeloProductoVenta.Name = "txtModeloProductoVenta";
+            this.txtModeloProductoVenta.ReadOnly = true;
             this.txtModeloProductoVenta.Size = new System.Drawing.Size(99, 26);
             this.txtModeloProductoVenta.TabIndex = 126;
             // 
@@ -221,6 +223,7 @@
             this.txtPrecioProductoVenta.Location = new System.Drawing.Point(417, 71);
             this.txtPrecioProductoVenta.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecioProductoVenta.Name = "txtPrecioProductoVenta";
+            this.txtPrecioProductoVenta.ReadOnly = true;
             this.txtPrecioProductoVenta.Size = new System.Drawing.Size(129, 26);
             this.txtPrecioProductoVenta.TabIndex = 131;
             // 
@@ -232,6 +235,7 @@
             this.txtStockProductoVenta.Location = new System.Drawing.Point(712, 32);
             this.txtStockProductoVenta.Margin = new System.Windows.Forms.Padding(2);
             this.txtStockProductoVenta.Name = "txtStockProductoVenta";
+            this.txtStockProductoVenta.ReadOnly = true;
             this.txtStockProductoVenta.Size = new System.Drawing.Size(65, 26);
             this.txtStockProductoVenta.TabIndex = 132;
             // 
@@ -256,6 +260,7 @@
             this.txtMarcaProductoVenta.Margin = new System.Windows.Forms.Padding(2);
             this.txtMarcaProductoVenta.MaxLength = 50;
             this.txtMarcaProductoVenta.Name = "txtMarcaProductoVenta";
+            this.txtMarcaProductoVenta.ReadOnly = true;
             this.txtMarcaProductoVenta.Size = new System.Drawing.Size(140, 26);
             this.txtMarcaProductoVenta.TabIndex = 134;
             // 
@@ -535,6 +540,7 @@
             this.txtMontoTotalVentaDetalle.Location = new System.Drawing.Point(143, 316);
             this.txtMontoTotalVentaDetalle.Margin = new System.Windows.Forms.Padding(4);
             this.txtMontoTotalVentaDetalle.Name = "txtMontoTotalVentaDetalle";
+            this.txtMontoTotalVentaDetalle.ReadOnly = true;
             this.txtMontoTotalVentaDetalle.Size = new System.Drawing.Size(91, 20);
             this.txtMontoTotalVentaDetalle.TabIndex = 153;
             // 
@@ -543,6 +549,7 @@
             this.txtMontoCambioVentaDetalle.Location = new System.Drawing.Point(596, 317);
             this.txtMontoCambioVentaDetalle.Margin = new System.Windows.Forms.Padding(4);
             this.txtMontoCambioVentaDetalle.Name = "txtMontoCambioVentaDetalle";
+            this.txtMontoCambioVentaDetalle.ReadOnly = true;
             this.txtMontoCambioVentaDetalle.Size = new System.Drawing.Size(119, 20);
             this.txtMontoCambioVentaDetalle.TabIndex = 155;
             // 

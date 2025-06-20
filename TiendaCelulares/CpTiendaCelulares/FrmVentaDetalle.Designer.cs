@@ -35,14 +35,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblCeduaIdentidad = new System.Windows.Forms.Label();
             this.lblInfNombreCliente = new System.Windows.Forms.Label();
-            this.lblMontoPagoVentaDetalle = new System.Windows.Forms.Label();
             this.gvxInfCliente = new System.Windows.Forms.GroupBox();
             this.txtInfNombreCliente = new System.Windows.Forms.TextBox();
-            this.txtMontoPagoVentaDetalle = new System.Windows.Forms.TextBox();
-            this.lblMontoTotalVentaDetalle = new System.Windows.Forms.Label();
-            this.txtMontoCambioVentaDetalle = new System.Windows.Forms.TextBox();
-            this.lblMontoCambioVentaDetalle = new System.Windows.Forms.Label();
-            this.txtMontoTotalVentaDetalle = new System.Windows.Forms.TextBox();
             this.lblNumeroDocumento = new System.Windows.Forms.Label();
             this.txtParametroCedulaIdentidadVentaDetalle = new System.Windows.Forms.TextBox();
             this.gbxInfVentaDetalle = new System.Windows.Forms.GroupBox();
@@ -121,17 +115,6 @@
             this.lblInfNombreCliente.TabIndex = 83;
             this.lblInfNombreCliente.Text = "Nombre Cliente:";
             // 
-            // lblMontoPagoVentaDetalle
-            // 
-            this.lblMontoPagoVentaDetalle.AutoSize = true;
-            this.lblMontoPagoVentaDetalle.BackColor = System.Drawing.Color.White;
-            this.lblMontoPagoVentaDetalle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMontoPagoVentaDetalle.Location = new System.Drawing.Point(237, 326);
-            this.lblMontoPagoVentaDetalle.Name = "lblMontoPagoVentaDetalle";
-            this.lblMontoPagoVentaDetalle.Size = new System.Drawing.Size(107, 18);
-            this.lblMontoPagoVentaDetalle.TabIndex = 245;
-            this.lblMontoPagoVentaDetalle.Text = "Monto Pago:";
-            // 
             // gvxInfCliente
             // 
             this.gvxInfCliente.BackColor = System.Drawing.Color.White;
@@ -156,61 +139,6 @@
             this.txtInfNombreCliente.ReadOnly = true;
             this.txtInfNombreCliente.Size = new System.Drawing.Size(191, 21);
             this.txtInfNombreCliente.TabIndex = 86;
-            // 
-            // txtMontoPagoVentaDetalle
-            // 
-            this.txtMontoPagoVentaDetalle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtMontoPagoVentaDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMontoPagoVentaDetalle.Location = new System.Drawing.Point(350, 323);
-            this.txtMontoPagoVentaDetalle.Name = "txtMontoPagoVentaDetalle";
-            this.txtMontoPagoVentaDetalle.ReadOnly = true;
-            this.txtMontoPagoVentaDetalle.Size = new System.Drawing.Size(64, 21);
-            this.txtMontoPagoVentaDetalle.TabIndex = 246;
-            this.txtMontoPagoVentaDetalle.Text = "0";
-            // 
-            // lblMontoTotalVentaDetalle
-            // 
-            this.lblMontoTotalVentaDetalle.AutoSize = true;
-            this.lblMontoTotalVentaDetalle.BackColor = System.Drawing.Color.White;
-            this.lblMontoTotalVentaDetalle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMontoTotalVentaDetalle.Location = new System.Drawing.Point(59, 328);
-            this.lblMontoTotalVentaDetalle.Name = "lblMontoTotalVentaDetalle";
-            this.lblMontoTotalVentaDetalle.Size = new System.Drawing.Size(106, 18);
-            this.lblMontoTotalVentaDetalle.TabIndex = 243;
-            this.lblMontoTotalVentaDetalle.Text = "Monto Total:";
-            // 
-            // txtMontoCambioVentaDetalle
-            // 
-            this.txtMontoCambioVentaDetalle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtMontoCambioVentaDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMontoCambioVentaDetalle.Location = new System.Drawing.Point(576, 325);
-            this.txtMontoCambioVentaDetalle.Name = "txtMontoCambioVentaDetalle";
-            this.txtMontoCambioVentaDetalle.ReadOnly = true;
-            this.txtMontoCambioVentaDetalle.Size = new System.Drawing.Size(55, 21);
-            this.txtMontoCambioVentaDetalle.TabIndex = 244;
-            this.txtMontoCambioVentaDetalle.Text = "0";
-            // 
-            // lblMontoCambioVentaDetalle
-            // 
-            this.lblMontoCambioVentaDetalle.AutoSize = true;
-            this.lblMontoCambioVentaDetalle.BackColor = System.Drawing.Color.White;
-            this.lblMontoCambioVentaDetalle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMontoCambioVentaDetalle.Location = new System.Drawing.Point(444, 326);
-            this.lblMontoCambioVentaDetalle.Name = "lblMontoCambioVentaDetalle";
-            this.lblMontoCambioVentaDetalle.Size = new System.Drawing.Size(126, 18);
-            this.lblMontoCambioVentaDetalle.TabIndex = 241;
-            this.lblMontoCambioVentaDetalle.Text = "Monto Cambio:";
-            // 
-            // txtMontoTotalVentaDetalle
-            // 
-            this.txtMontoTotalVentaDetalle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtMontoTotalVentaDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMontoTotalVentaDetalle.Location = new System.Drawing.Point(171, 325);
-            this.txtMontoTotalVentaDetalle.Name = "txtMontoTotalVentaDetalle";
-            this.txtMontoTotalVentaDetalle.ReadOnly = true;
-            this.txtMontoTotalVentaDetalle.Size = new System.Drawing.Size(49, 21);
-            this.txtMontoTotalVentaDetalle.TabIndex = 242;
-            this.txtMontoTotalVentaDetalle.Text = "0";
             // 
             // lblNumeroDocumento
             // 
@@ -248,6 +176,7 @@
             // 
             // dtpFechaVentaDetalle
             // 
+            this.dtpFechaVentaDetalle.Enabled = false;
             this.dtpFechaVentaDetalle.Location = new System.Drawing.Point(45, 40);
             this.dtpFechaVentaDetalle.Name = "dtpFechaVentaDetalle";
             this.dtpFechaVentaDetalle.Size = new System.Drawing.Size(245, 26);
@@ -266,9 +195,9 @@
             // dgvDetalleVenta
             // 
             this.dgvDetalleVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetalleVenta.Location = new System.Drawing.Point(17, 362);
+            this.dgvDetalleVenta.Location = new System.Drawing.Point(17, 334);
             this.dgvDetalleVenta.Name = "dgvDetalleVenta";
-            this.dgvDetalleVenta.Size = new System.Drawing.Size(656, 155);
+            this.dgvDetalleVenta.Size = new System.Drawing.Size(656, 183);
             this.dgvDetalleVenta.TabIndex = 250;
             // 
             // btnNuevoRegistroVenta
@@ -330,14 +259,8 @@
             this.Controls.Add(this.lblTituloVentaDetalle);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnBorrar);
-            this.Controls.Add(this.lblMontoPagoVentaDetalle);
             this.Controls.Add(this.gvxInfCliente);
-            this.Controls.Add(this.txtMontoPagoVentaDetalle);
             this.Controls.Add(this.txtParametroCedulaIdentidadVentaDetalle);
-            this.Controls.Add(this.lblMontoTotalVentaDetalle);
-            this.Controls.Add(this.txtMontoCambioVentaDetalle);
-            this.Controls.Add(this.lblMontoCambioVentaDetalle);
-            this.Controls.Add(this.txtMontoTotalVentaDetalle);
             this.Controls.Add(this.lblNumeroDocumento);
             this.Controls.Add(this.gbxInfVentaDetalle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -366,14 +289,8 @@
         private System.Windows.Forms.Label lblCeduaIdentidad;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Label lblInfNombreCliente;
-        private System.Windows.Forms.Label lblMontoPagoVentaDetalle;
         private System.Windows.Forms.GroupBox gvxInfCliente;
         private System.Windows.Forms.TextBox txtInfNombreCliente;
-        private System.Windows.Forms.TextBox txtMontoPagoVentaDetalle;
-        private System.Windows.Forms.Label lblMontoTotalVentaDetalle;
-        private System.Windows.Forms.TextBox txtMontoCambioVentaDetalle;
-        private System.Windows.Forms.Label lblMontoCambioVentaDetalle;
-        private System.Windows.Forms.TextBox txtMontoTotalVentaDetalle;
         private System.Windows.Forms.Label lblNumeroDocumento;
         private System.Windows.Forms.TextBox txtParametroCedulaIdentidadVentaDetalle;
         private System.Windows.Forms.GroupBox gbxInfVentaDetalle;

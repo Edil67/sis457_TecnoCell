@@ -34,6 +34,8 @@ namespace CpTecnoCell
             dgvListaCliente.Columns["direccion"].HeaderText = "Dirección";
             dgvListaCliente.Columns["celular"].HeaderText = "Celular";
             dgvListaCliente.Columns["correoElectronico"].HeaderText = "Correo Electrónico";
+            dgvListaCliente.Columns["fechaRegistro"].HeaderText = "Fecha Registro";
+            dgvListaCliente.Columns["usuarioRegistro"].HeaderText = "Usuario Registro";
 
 
             btnEditar.Enabled = lista.Count() > 0;

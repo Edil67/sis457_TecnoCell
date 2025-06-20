@@ -24,9 +24,24 @@ namespace CpTecnoCell
         {
             var lista = ProductoCln.listarPa(txtParametroProducto.Text);
             dgvLista.DataSource = lista;
+
+            dgvLista.Columns["id"].Visible = false; // Mostrar ID
+            dgvLista.Columns["idCategoria"].Visible = false;
+            dgvLista.Columns["estado"].Visible = false; // Mostrar Estado
+            dgvLista.Columns["nombre"].HeaderText = "Nombre";
+            dgvLista.Columns["modelo"].HeaderText = "Modelo";
+            dgvLista.Columns["marca"].HeaderText = "Marca";
+            dgvLista.Columns["color"].HeaderText = "Color";
+            dgvLista.Columns["descripcion"].HeaderText = "Descripción";
+            dgvLista.Columns["precioVenta"].HeaderText = "Precio de Venta";
+            dgvLista.Columns["stock"].HeaderText = "Stock";
+            dgvLista.Columns["categoriaDescripcion"].HeaderText = "Categoria";
+            dgvLista.Columns["fechaRegistro"].HeaderText = "Fecha Registro";
+            dgvLista.Columns["usuarioRegistro"].HeaderText = "Usuario Registro";
+
+
             if (lista.Count > 0) dgvLista.CurrentCell = dgvLista.Rows[0].Cells["modelo"];
         }
-
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {

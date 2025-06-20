@@ -1,19 +1,25 @@
-﻿CREATE DATABASE LabTiendaCelulares;
+﻿CREATE DATABASE FinalTiendaCelulares;
 
 GO
 USE [master]
 GO
-CREATE LOGIN [usrtecnocell] WITH PASSWORD = N'123456',
-    DEFAULT_DATABASE = [LabTiendaCelulares],
+CREATE LOGIN [usrtiendacelulares] WITH PASSWORD = N'123456',
+    DEFAULT_DATABASE = [FinalTiendaCelulares],
     CHECK_EXPIRATION = OFF,
     CHECK_POLICY = ON
 GO
-USE [LabTiendaCelulares]
+USE [FinalTiendaCelulares]
 GO
-CREATE USER [usrtecnocell] FOR LOGIN [usrtecnocell]
+CREATE USER [usrtiendacelulares] FOR LOGIN [usrtiendacelulares]
 GO
-ALTER ROLE [db_owner] ADD MEMBER [usrtecnocell]
+ALTER ROLE [db_owner] ADD MEMBER [usrtiendacelulares]
 GO
+
+-- USE FinalTiendaCelulares
+-- GO
+-- DROP USER [usrtecnocell]
+-- GO
+-- DROP LOGIN [usrtecnocell]
 
 DROP TABLE VentaDetalle;
 DROP TABLE Venta;

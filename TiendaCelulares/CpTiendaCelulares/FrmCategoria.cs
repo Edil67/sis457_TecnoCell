@@ -26,13 +26,15 @@ namespace CpTecnoCell
             dgvListaCategoria.DataSource = lista;
             dgvListaCategoria.Columns["id"].Visible = false;
             dgvListaCategoria.Columns["estado"].Visible = false;
-            dgvListaCategoria.Columns["usuarioRegistro"].Visible = false;
+            dgvListaCategoria.Columns["usuarioRegistro"].HeaderText="Usuario Registro";
+            dgvListaCategoria.Columns["fechaRegistro"].HeaderText = "Fecha Registro";
             dgvListaCategoria.Columns["descripcion"].HeaderText = "Descripcion Categoría";
 
             btnEditar.Enabled = lista.Count > 0;
             btnEliminar.Enabled = lista.Count > 0;
 
             if (lista.Count > 0) dgvListaCategoria.CurrentCell = dgvListaCategoria.Rows[0].Cells["descripcion"];
+            
         }
 
         private void limpiar()
@@ -45,8 +47,10 @@ namespace CpTecnoCell
 
             if (string.IsNullOrEmpty(txtDescripcionCategoria.Text))
             {
-                erpDescripcionCategoria.SetError(txtDescripcionCategoria, "Debe ingresar una descripción de categoría.");
                 esValido = false;
+                Size = new Size(915, 527);
+                erpDescripcionCategoria.SetError(txtDescripcionCategoria, "Debe ingresar una descripción de categoría.");
+               
             }
             return esValido;
         }

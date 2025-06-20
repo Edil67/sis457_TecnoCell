@@ -22,7 +22,7 @@ namespace CpTecnoCell
         }
 
 
-        private void listar()
+        public void listar()
         {
             var lista = ProductoCln.listarPa(txtParametroProducto.Text.Trim());
             dgvListaProducto.DataSource = lista;
@@ -37,6 +37,8 @@ namespace CpTecnoCell
             dgvListaProducto.Columns["precioVenta"].HeaderText = "Precio de Venta";
             dgvListaProducto.Columns["stock"].HeaderText = "Stock";
             dgvListaProducto.Columns["categoriaDescripcion"].HeaderText = "Categoria";
+            dgvListaProducto.Columns["fechaRegistro"].HeaderText = "Fecha Registro";
+            dgvListaProducto.Columns["usuarioRegistro"].HeaderText = "Usuario Registro";
 
 
             // Habilitar los botones si se encontró al menos un producto
@@ -112,7 +114,12 @@ namespace CpTecnoCell
 
             cbxColorProducto.SelectedItem = "Negro"; // Asignar el color seleccionado
             txtPrecioVentaProducto.Text = producto.precioVenta.ToString();
-            nudStockProducto.Value = producto.stock; // Asignar el stock
+            if (producto.stock < nudStockProducto.Minimum)
+                nudStockProducto.Value = nudStockProducto.Minimum;
+            else if (producto.stock > nudStockProducto.Maximum)
+                nudStockProducto.Value = nudStockProducto.Maximum;
+            else
+                nudStockProducto.Value = producto.stock;
 
             txtNombreProducto.Focus();
 

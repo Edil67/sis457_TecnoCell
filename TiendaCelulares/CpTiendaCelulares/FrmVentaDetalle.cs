@@ -50,9 +50,6 @@ namespace CpTecnoCell
             txtInfNombreCliente.Text = primerVenta.Cliente.nombres;
             txtInfVentaCedulaIdentidad.Text = primerVenta.documentoCliente;
             txtInfVentaUsuario.Text = primerVenta.usuarioRegistro;
-            txtMontoTotalVentaDetalle.Text = primerVenta.montoTotal?.ToString("0.00") ?? "0.00";
-            txtMontoPagoVentaDetalle.Text = primerVenta.montoPago.ToString("0.00");
-            txtMontoCambioVentaDetalle.Text = primerVenta.montoCambio.ToString("0.00");
             dtpFechaVentaDetalle.Text = primerVenta.fechaRegistro.ToString("dd/MM/yyyy HH:mm:ss");
 
             // Mostrar todos los productos de todas las ventas del cliente
@@ -76,6 +73,8 @@ namespace CpTecnoCell
                 .ToList();
 
             dgvDetalleVenta.DataSource = detalles;
+            dgvDetalleVenta.Columns["fechaRegistro"].HeaderText = "Fecha Registro";
+            dgvDetalleVenta.Columns["usuarioRegistro"].HeaderText = "Usuario Registro";
         }
 
 
@@ -88,9 +87,6 @@ namespace CpTecnoCell
             dtpFechaVentaDetalle.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
             txtInfVentaCedulaIdentidad.Text = "";
             txtInfVentaUsuario.Text = "";
-            txtMontoTotalVentaDetalle.Text = "0.00";
-            txtMontoPagoVentaDetalle.Text = "0.00";
-            txtMontoCambioVentaDetalle.Text = "0.00";
             txtInfNombreCliente.Text = "";
         }
     
