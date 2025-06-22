@@ -29,7 +29,7 @@ namespace CpTecnoCell
                 return;
             }
 
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 var cliente = context.Cliente.FirstOrDefault(c => c.cedulaIdentidad == cedulaIdentidad);
 
@@ -206,7 +206,7 @@ namespace CpTecnoCell
             string codigo = txtModeloProductoVenta.Text;
             int cantidadVenta = (int)nudCantidadProductoVenta.Value;
 
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 var producto = context.Producto.FirstOrDefault(p => p.modelo == codigo);
                 if (producto == null)
@@ -383,7 +383,7 @@ namespace CpTecnoCell
             }
 
             // Registrar la venta
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 // Buscar el cliente por cédula de identidad
                 var cliente = context.Cliente.FirstOrDefault(c => c.cedulaIdentidad == txtCedulaIdentidadVenta.Text.Trim());

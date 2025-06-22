@@ -93,7 +93,7 @@ namespace CpTecnoCell
 
         public static List<Venta> obtenerVentasPorCliente(string cedulaIdentidad)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 return context.Venta
                     .Include("Cliente")

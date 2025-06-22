@@ -5,47 +5,23 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Productos</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Crear Nuevo</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Modelo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Marca)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Color)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Descripcion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PrecioVenta)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Stock)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioRegistro)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaRegistro)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Estado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdCategoriaNavigation)
-            </th>
+            <th>Nombre</th>
+            <th>Modelo</th>
+            <th>Marca</th>
+            <th>Color</th>
+            <th>Precio de Venta</th>
+            <th>Stock</th>
+            <th>Usuario Registro</th>
+            <th>Fecha Registro</th>
             <th></th>
         </tr>
     </thead>
@@ -65,9 +41,6 @@
                 @Html.DisplayFor(modelItem => item.Color)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Descripcion)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.PrecioVenta)
             </td>
             <td>
@@ -80,15 +53,15 @@
                 @Html.DisplayFor(modelItem => item.FechaRegistro)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Estado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdCategoriaNavigation.Id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning" title="Editar">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info" title="Detalles">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger" title="Eliminar">
+                        <i class="fa fa-trash"></i>
+                    </a>
             </td>
         </tr>
 }

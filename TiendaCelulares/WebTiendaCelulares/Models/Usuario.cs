@@ -21,5 +21,5 @@ public partial class Usuario
 
     public virtual Empleado IdEmpleadoNavigation { get; set; } = null!;
 
-    public virtual ICollection<Ventum> Venta { get; set; } = new List<Ventum>();
+    public virtual ICollection<Venta> Venta { get; set; } = new List<Venta>();
 }

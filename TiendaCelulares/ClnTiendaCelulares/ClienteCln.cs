@@ -12,7 +12,7 @@ namespace ClnTecnoCell
     {
         public static int insertar(Cliente cliente)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 bool existe = context.Cliente.Any(c => c.cedulaIdentidad == cliente.cedulaIdentidad && c.estado != -1);
                 if (existe)
@@ -27,7 +27,7 @@ namespace ClnTecnoCell
         }
         public static int actualizar(Cliente cliente)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 // Validar duplicidad antes de actualizar
                 if (context.Cliente.Any(c => c.cedulaIdentidad == cliente.cedulaIdentidad && c.id != cliente.id && c.estado != -1))
@@ -50,7 +50,7 @@ namespace ClnTecnoCell
         }
         public static int eliminar(int id, string usuario)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 var cliente = context.Cliente.Find(id);
                 if (cliente != null)
@@ -64,21 +64,21 @@ namespace ClnTecnoCell
         }
         public static List<Cliente> listar()
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 return context.Cliente.Where(x => x.estado != -1).ToList();
             }
         }
         public static Cliente obtenerUno(int id)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 return context.Cliente.Find(id);
             }
         }
         public static List<paClienteListar_Result> listarPa(string parametro)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 return context.paClienteListar(parametro).ToList();
             }
@@ -86,7 +86,7 @@ namespace ClnTecnoCell
 
         public static bool existeDocumento(string cedulaidentidad)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 return context.Cliente.Any(c => c.cedulaIdentidad == cedulaidentidad && c.estado != -1);
             }

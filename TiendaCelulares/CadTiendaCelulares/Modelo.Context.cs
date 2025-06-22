@@ -15,10 +15,10 @@ namespace CadTecnoCell
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class LabTiendaCelularesEntities : DbContext
+    public partial class FinalTiendaCelularesEntities : DbContext
     {
-        public LabTiendaCelularesEntities()
-            : base("name=LabTiendaCelularesEntities")
+        public FinalTiendaCelularesEntities()
+            : base("name=FinalTiendaCelularesEntities")
         {
         }
     

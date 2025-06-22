@@ -247,6 +247,15 @@ INSERT INTO VentaDetalle (idVenta, idProducto, cantidad, precioUnitario)
 VALUES 
 (1, 1, 1, 500);
 
+-- inserta un segundo empleado y su usuario
+INSERT INTO Empleado (nombres, primerApellido, segundoApellido, direccion, celular, cargo)
+VALUES 
+('Jose', 'Pérez', 'Gómez', 'Av. Siempre Viva 123', 98765, 'Vendedor');
+
+INSERT INTO Usuario (idEmpleado, usuario, clave)
+VALUES 
+(1, 'admin', 'W6ph5Mm5Pz8GgiULbPgzG37mj9g');
+
 -- SELECT * FROM Categoria;
 -- SELECT * FROM Empleado;
 SELECT * FROM Producto;

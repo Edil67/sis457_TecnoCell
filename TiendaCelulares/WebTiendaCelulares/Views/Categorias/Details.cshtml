@@ -1,0 +1,35 @@
+﻿@model WebTiendaCelulares.Models.Categorium
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-7">
+            <div class="card shadow">
+                <div class="card-header bg-info text-white">
+                    <h4 class="mb-0">Detalle</h4>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-4">Descripcion</dt>
+                        <dd class="col-sm-8">@Model.Descripcion</dd>
+                        <!-- ...otros campos... -->
+                    </dl>
+                    <div class="d-flex justify-content-between">
+                        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">
+                            <i class="fa fa-edit"></i> Editar
+                        </a>
+                        <a asp-action="Index" class="btn btn-outline-secondary">
+                            <i class="fa fa-arrow-left"></i> Volver
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

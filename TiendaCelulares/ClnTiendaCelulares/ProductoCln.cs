@@ -10,7 +10,7 @@ namespace ClnTecnoCell
     {
         public static int insertar(Producto producto)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 context.Producto.Add(producto);
                 context.SaveChanges();
@@ -20,7 +20,7 @@ namespace ClnTecnoCell
 
         public static int actualizar(Producto producto)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 var existente = context.Producto.Find(producto.id);
                 if (existente != null)
@@ -40,7 +40,7 @@ namespace ClnTecnoCell
 
         public static int eliminar(int id, string usuario)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 var producto = context.Producto.Find(id);
 
@@ -51,7 +51,7 @@ namespace ClnTecnoCell
         }
         public static List<Producto> Listar()
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 return context.Producto.Where(x => x.estado != -1).ToList();
             }
@@ -59,14 +59,14 @@ namespace ClnTecnoCell
 
         public static Producto obtenerUno(int id)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 return context.Producto.Find(id);
             }
         }
         public static List<paProductoListar_Result> listarPa(string parametro)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 // Llamamos al procedimiento almacenado que acepta el parámetro
                 return context.paProductoListar(parametro).ToList();

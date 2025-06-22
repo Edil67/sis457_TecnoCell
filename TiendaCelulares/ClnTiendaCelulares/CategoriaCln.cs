@@ -11,7 +11,7 @@ namespace ClnTecnoCell
     {
         public static int insertar(Categoria categoria)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 context.Categoria.Add(categoria);
                 context.SaveChanges();
@@ -21,7 +21,7 @@ namespace ClnTecnoCell
 
         public static int actualizar(Categoria categoria)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 var existente = context.Categoria.Find(categoria.id);
                 existente.descripcion = categoria.descripcion;
@@ -32,7 +32,7 @@ namespace ClnTecnoCell
 
         public static int eliminar(int id, string usuario)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 var categoria = context.Categoria.Find(id);
                 categoria.estado = -1;
@@ -43,7 +43,7 @@ namespace ClnTecnoCell
 
         public static Categoria obtenerUno(int id)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 return context.Categoria.Find(id);
             }
@@ -51,7 +51,7 @@ namespace ClnTecnoCell
 
         public static List<Categoria> listar()
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 return context.Categoria.Where(x => x.estado != -1).ToList();
             }
@@ -59,7 +59,7 @@ namespace ClnTecnoCell
 
         public static List<paCategoriaListar_Result> listarPa(string parametro)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 return context.paCategoriaListar(parametro).ToList();
             }
@@ -67,7 +67,7 @@ namespace ClnTecnoCell
 
         public static bool ExisteDescripcion(string descripcion)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 return context.Categoria.Any(c => c.descripcion.Equals(descripcion, StringComparison.OrdinalIgnoreCase) && c.estado != -1);
             }

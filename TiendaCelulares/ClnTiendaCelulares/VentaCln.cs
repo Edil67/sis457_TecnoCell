@@ -11,7 +11,7 @@ namespace ClnTecnoCell
     {
         public static int Insertar(Venta venta)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 context.Venta.Add(venta);
                 context.SaveChanges();
@@ -20,7 +20,7 @@ namespace ClnTecnoCell
         }
         public static int Actualizar(Venta venta)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 var existente = context.Venta.Find(venta.id);
                 if (existente != null)
@@ -39,7 +39,7 @@ namespace ClnTecnoCell
 
         public static int Eliminar(int id, string usuario)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 var venta = context.Venta.Find(id);
                 if (venta != null)
@@ -54,7 +54,7 @@ namespace ClnTecnoCell
 
         public static List<Venta> listar()
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 return context.Venta.Where(x => x.estado != -1).ToList();
             }
@@ -62,7 +62,7 @@ namespace ClnTecnoCell
 
         public static Venta obtenerVentaDetalle(string cedulaIdentidad)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 var venta = context.Venta
                     .Include("VentaDetalle.Producto")
@@ -74,7 +74,7 @@ namespace ClnTecnoCell
         
         public static List<paVentaListar_Result> listarPa(string parametro)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 // Llamamos al procedimiento almacenado que acepta el parámetro
                 return context.paVentaListar(parametro).ToList();
@@ -83,7 +83,7 @@ namespace ClnTecnoCell
 
         public static List<VentaDetalle> obtenerDetalleVenta(int idVenta)
         {
-            using (var context = new LabTiendaCelularesEntities())
+            using (var context = new FinalTiendaCelularesEntities())
             {
                 return context.VentaDetalle
                               .Where(d => d.id == idVenta)
