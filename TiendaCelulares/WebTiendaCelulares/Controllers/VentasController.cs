@@ -7,7 +7,8 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using WebTiendaCelulares.Models;
-using System.Globalization;
+using System.ComponentModel.DataAnnotations.Schema;
+
 
 
 namespace WebTiendaCelulares.Controllers
@@ -160,18 +161,60 @@ namespace WebTiendaCelulares.Controllers
         // GET: Ventas/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            ViewData["Clientes"] = _context.Clientes
+    .Where(c => c.Estado != -1)
+    .Select(c => new SelectListItem
+    {
+        Value = c.Id.ToString(),
+        Text = c.Nombres + " " + c.Apellidos
+    })
+    .ToList();
+
+
+
+            ViewBag.Productos = _context.Productos
+    .Where(p => p.Estado != -1 && p.Stock > 0)
+    .Select(p => new {
+        Id = (int)p.Id,
+        Descripcion = p.Nombre + " | " + p.Marca + " " + p.Modelo +
+                      " | Stock: " + p.Stock +
+                      " | Precio: " + p.PrecioVenta.ToString("C", new CultureInfo("es-BO"))
+    })
+    .ToList();
+
             if (id == null)
             {
                 return NotFound();
             }
 
-            var venta = await _context.Venta.FindAsync(id);
+            var venta = await _context.Venta
+        .Include(v => v.VentaDetalles)
+        .FirstOrDefaultAsync(v => v.Id == id);
+
             if (venta == null)
             {
                 return NotFound();
             }
-            ViewData["IdCliente"] = new SelectList(_context.Clientes, "Id", "Id", venta.IdCliente);
-            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Id", venta.IdUsuario);
+
+
+
+            ViewData["Clientes"] = _context.Clientes
+                .Where(c => c.Estado != -1)
+                .Select(c => new SelectListItem
+                {
+                    Value = c.Id.ToString(),
+                    Text = c.Nombres + " " + c.Apellidos
+                }).ToList();
+
+            ViewBag.Productos = _context.Productos
+                .Where(p => p.Estado != -1 && p.Stock > 0)
+                .Select(p => new {
+                    Id = (int)p.Id,
+                    Descripcion = p.Nombre + " | " + p.Marca + " " + p.Modelo +
+                                  " | Stock: " + p.Stock +
+                                  " | Precio: " + p.PrecioVenta.ToString("C", new CultureInfo("es-BO"))
+                }).ToList();
+
             return View(venta);
         }
 
@@ -213,13 +256,6 @@ namespace WebTiendaCelulares.Controllers
             }
             ViewData["IdCliente"] = new SelectList(_context.Clientes, "Id", "Id", venta.IdCliente);
             ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Id", venta.IdUsuario);
-            foreach (var kvp in ModelState)
-{
-    foreach (var error in kvp.Value.Errors)
-    {
-        Console.WriteLine($"Campo: {kvp.Key} - Error: {error.ErrorMessage}");
-    }
-}
 
             return View(venta);
         }

@@ -13,33 +13,128 @@
                     <h4 class="mb-0">Editar Venta</h4>
                 </div>
                 <div class="card-body">
-                    <form asp-action="Edit">
-                        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
-                        <input type="hidden" asp-for="Id" />
-                        <div class="mb-3">
-                            <label asp-for="DocumentoCliente" class="form-label"></label>
-                            <input asp-for="DocumentoCliente" class="form-control" />
-                            <span asp-validation-for="DocumentoCliente" class="text-danger"></span>
-                        </div>
-                        <div class="mb-3">
-                            <label asp-for="MontoPago" class="form-label"></label>
-                            <input asp-for="MontoPago" class="form-control" />
-                            <span asp-validation-for="MontoPago" class="text-danger"></span>
-                        </div>
-                        <div class="mb-3">
-                            <label asp-for="MontoCambio" class="form-label"></label>
-                            <input asp-for="MontoCambio" class="form-control" />
-                            <span asp-validation-for="MontoCambio" class="text-danger"></span>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <a asp-action="Index" class="btn btn-outline-secondary">
-                                <i class="fa fa-arrow-left"></i> Volver
-                            </a>
-                            <button type="submit" class="btn btn-warning">
-                                <i class="fa fa-save"></i> Guardar Cambios
-                            </button>
-                        </div>
-                    </form>
+                    <div class="card-body">
+                       <form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+                            <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                            <div class="mb-3">
+                                <label asp-for="IdCliente" class="form-label">Cliente</label>
+
+                                <select asp-for="IdCliente" asp-items="ViewBag.Clientes" class="form-select"></select>
+
+                                <span asp-validation-for="IdCliente" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Seleccionar cliente</label>
+                                <select id="cliente" class="form-select">
+                                    <option value="">-- Selecciona un cliente --</option>
+                                    @foreach (var item in (IEnumerable<dynamic>)ViewBag.Clientes)
+                                    {
+                                        var nombreCompleto = item.Text; // ya que el SelectListItem tiene .Text = Nombres + Apellidos
+                                                                        <option value="@item.Value" data-nombre="@nombreCompleto">
+                                                                            @nombreCompleto
+                                                                        </option>
+                                    }
+                                </select>
+
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Seleccionar producto</label>
+                                <select id="producto" class="form-select">
+                                    <option value="">-- Selecciona un producto --</option>
+                                    @foreach (var item in (IEnumerable<dynamic>)ViewBag.Productos)
+                                    {
+                                        var partes = item.Descripcion.Split("|");
+
+                                        var nombre = partes.Length > 0 ? partes[0].Trim() : "";
+                                        var marcaModelo = partes.Length > 1 ? partes[1].Trim() : "";
+                                        var stock = partes.Length > 2 ? partes[2].Replace("Stock:", "").Trim() : "0";
+                                        var precioRaw = partes.Length > 3
+                                        ? partes[3]
+                                        .Replace("Precio:", "")
+                                        .Replace("Bs", "")
+                                        .Replace("$", "")
+                                        .Replace(".", "")
+                                        .Replace(",", ".")
+                                        .Trim()
+                                        : "0";
+
+                                        <option value="@item.Id"
+                                                data-marca="@marcaModelo"
+                                                data-stock="@stock"
+                                                data-precio="@precioRaw">
+                                            @item.Descripcion
+                                        </option>
+                                    }
+
+
+                                </select>
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Marca / Modelo</label>
+                                    <input type="text" class="form-control" id="marcaModelo" readonly />
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Stock</label>
+                                    <input type="text" class="form-control" id="stockProducto" readonly />
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Precio Unitario</label>
+                                    <input type="text" class="form-control" id="precioProducto" readonly />
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Cantidad</label>
+                                <input type="number" id="cantidad" class="form-control" min="1" value="1" />
+                                <button type="button" class="btn btn-primary" onclick="agregarProducto()">Agregar Producto</button>
+                            </div>
+                            <table class="table mt-3" id="tablaDetalle">
+                                <thead>
+                                    <tr>
+                                        <th>Producto</th>
+                                        <th>Precio</th>
+                                        <th>Cantidad</th>
+                                        <th>Subtotal</th>
+                                        <th></th> <!-- Columna para botón eliminar -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+
+                            </table>
+
+                            <div class="mb-3">
+                                <label class="form-label">Monto Total</label>
+                                <input asp-for="MontoTotal" class="form-control" id="montoTotal" readonly />
+
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Monto Pagado</label>
+                                <input asp-for="MontoPago" class="form-control" id="montoPago" />
+                                <span asp-validation-for="MontoPago" class="text-danger"></span>
+
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Cambio</label>
+                                <input asp-for="MontoCambio" class="form-control" id="montoCambio" readonly />
+                            </div>
+                            <div id="detalleContainer"></div>
+
+
+                            <div class="d-flex justify-content-between">
+                                <a asp-action="Index" class="btn btn-outline-secondary">
+                                    <i class="fa fa-arrow-left"></i> Volver
+                                </a>
+                                <button type="submit" class="btn btn-success">
+                                    <i class="fa fa-save"></i> Guardar Venta
+                                </button>
+                            </div>
+                        </form>
                 </div>
             </div>
         </div>
