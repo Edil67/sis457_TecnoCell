@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 using WebTiendaCelulares.Models;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -18,11 +18,27 @@ namespace WebTiendaCelulares.Controllers
             _context = context;
         }
 
+
         // GET: VentaDetalles
-        public async Task<IActionResult> Index()
-        {
-            var finalTiendaCelularesContext = _context.VentaDetalles.Include(v => v.IdProductoNavigation).Include(v => v.IdVentaNavigation);
-            return View(await finalTiendaCelularesContext.ToListAsync());
+        public async Task<IActionResult> Index(int? id, string cedula)
+{
+            var detalles = _context.VentaDetalles
+               .Include(v => v.IdProductoNavigation)
+               .Include(v => v.IdVentaNavigation)
+               .ThenInclude(v => v.IdClienteNavigation)
+               .AsQueryable();
+
+            if (id.HasValue)
+            {
+                detalles = detalles.Where(v => v.IdVenta == id.Value);
+            }
+            else if (!string.IsNullOrEmpty(cedula))
+            {
+                detalles = detalles.Where(v => v.IdVentaNavigation.DocumentoCliente == cedula);
+            }
+
+            ViewBag.Cedula = cedula;
+            return View(await detalles.ToListAsync());
         }
 
         // GET: VentaDetalles/Details/5

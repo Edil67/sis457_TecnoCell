@@ -15,7 +15,7 @@ public partial class VentaDetalle
 
     public decimal PrecioUnitario { get; set; }
 
-    public decimal? Subtotal { get; set; }
+    public decimal Subtotal { get; set; }
 
     public string UsuarioRegistro { get; set; } = null!;
 

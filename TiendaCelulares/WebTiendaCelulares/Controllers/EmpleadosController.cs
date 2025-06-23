@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using WebTiendaCelulares.Models;
 
 namespace WebTiendaCelulares.Controllers
@@ -51,11 +52,12 @@ namespace WebTiendaCelulares.Controllers
         // POST: Empleados/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Nombres,PrimerApellido,SegundoApellido,Direccion,Celular,Cargo,UsuarioRegistro,FechaRegistro,Estado")] Empleado empleado)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 _context.Add(empleado);
                 await _context.SaveChangesAsync();
@@ -83,6 +85,7 @@ namespace WebTiendaCelulares.Controllers
         // POST: Empleados/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Nombres,PrimerApellido,SegundoApellido,Direccion,Celular,Cargo,UsuarioRegistro,FechaRegistro,Estado")] Empleado empleado)
@@ -92,10 +95,14 @@ namespace WebTiendaCelulares.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 try
                 {
+                    empleado.UsuarioRegistro = User.Identity?.Name;
+                    empleado.FechaRegistro = DateTime.Now;
+
+                    empleado.Estado = 1; // o el estado que corresponde
                     _context.Update(empleado);
                     await _context.SaveChangesAsync();
                 }
@@ -134,6 +141,7 @@ namespace WebTiendaCelulares.Controllers
         }
 
         // POST: Empleados/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

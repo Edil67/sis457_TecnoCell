@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using WebTiendaCelulares.Models;
 
 namespace WebTiendaCelulares.Controllers
@@ -21,7 +22,9 @@ namespace WebTiendaCelulares.Controllers
         // GET: Clientes
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Clientes.ToListAsync());
+            var clientes = _context.Clientes
+            .Where(c => c.Estado != -1);
+            return View(await clientes.ToListAsync());
         }
 
         // GET: Clientes/Details/5
@@ -51,12 +54,20 @@ namespace WebTiendaCelulares.Controllers
         // POST: Clientes/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,CedulaIdentidad,Nombres,Apellidos,Direccion,Celular,CorreoElectronico,UsuarioRegistro,FechaRegistro,Estado")] Cliente cliente)
+        public async Task<IActionResult> Create([Bind("CedulaIdentidad,Nombres,Apellidos,Direccion,Celular,CorreoElectronico,UsuarioRegistro,FechaRegistro,Estado")] Cliente cliente)
         {
-            if (ModelState.IsValid)
+            if (!String.IsNullOrEmpty(cliente.CedulaIdentidad) && 
+                !String.IsNullOrEmpty(cliente.Nombres) && 
+                !String.IsNullOrEmpty(cliente.Apellidos))
             {
+
+                cliente.UsuarioRegistro = User.Identity.Name;
+                cliente.FechaRegistro = DateTime.Now;
+                cliente.Estado = 1;
+
                 _context.Add(cliente);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -83,6 +94,7 @@ namespace WebTiendaCelulares.Controllers
         // POST: Clientes/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,CedulaIdentidad,Nombres,Apellidos,Direccion,Celular,CorreoElectronico,UsuarioRegistro,FechaRegistro,Estado")] Cliente cliente)
@@ -92,11 +104,28 @@ namespace WebTiendaCelulares.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(cliente);
+                    var clienteDb = await _context.Clientes.FindAsync(id);
+                    if (clienteDb == null) return NotFound();
+
+                    // Actualización directa sin condicionales
+                    clienteDb.CedulaIdentidad= cliente.CedulaIdentidad;
+                    clienteDb.Nombres = cliente.Nombres;
+                    clienteDb.Apellidos = cliente.Apellidos;
+                    clienteDb.Celular= cliente.Celular;
+                    clienteDb.Direccion= cliente.Direccion;
+                    clienteDb.CorreoElectronico= cliente.CorreoElectronico;
+
+                    clienteDb.UsuarioRegistro = User.Identity.Name;
+                    clienteDb.FechaRegistro = DateTime.Now;
+
+                    clienteDb.Estado = 1; // o el estado que corresponde
+
+
+                    _context.Update(clienteDb);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -134,6 +163,7 @@ namespace WebTiendaCelulares.Controllers
         }
 
         // POST: Clientes/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -141,7 +171,11 @@ namespace WebTiendaCelulares.Controllers
             var cliente = await _context.Clientes.FindAsync(id);
             if (cliente != null)
             {
-                _context.Clientes.Remove(cliente);
+                cliente.Estado = -1; // Eliminación lógica
+                cliente.UsuarioRegistro = User.Identity.Name;
+                cliente.FechaRegistro = DateTime.Now;
+
+                _context.Clientes.Update(cliente);
             }
 
             await _context.SaveChangesAsync();

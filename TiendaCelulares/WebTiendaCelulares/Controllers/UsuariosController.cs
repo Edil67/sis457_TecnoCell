@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using WebTiendaCelulares.Models;
 
 namespace WebTiendaCelulares.Controllers
@@ -21,7 +22,8 @@ namespace WebTiendaCelulares.Controllers
         // GET: Usuarios
         public async Task<IActionResult> Index()
         {
-            var finalTiendaCelularesContext = _context.Usuarios.Include(u => u.IdEmpleadoNavigation);
+            var finalTiendaCelularesContext = _context.Usuarios
+                .Include(u => u.IdEmpleadoNavigation);
             return View(await finalTiendaCelularesContext.ToListAsync());
         }
 
@@ -47,26 +49,45 @@ namespace WebTiendaCelulares.Controllers
         // GET: Usuarios/Create
         public IActionResult Create()
         {
-            ViewData["IdEmpleado"] = new SelectList(_context.Empleados, "Id", "Id");
+            ViewData["IdEmpleado"] = new SelectList(
+    _context.Empleados
+        .Where(e => e.Estado != -1)
+        .Select(e => new { e.Id, NombreCompleto = e.Nombres  }),
+    "Id",
+    "NombreCompleto"
+);
+
             return View();
         }
 
         // POST: Usuarios/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,IdEmpleado,Usuario,Clave,UsuarioRegistro,FechaRegistro,Estado")] Usuario usuario)
+        public async Task<IActionResult> Create([Bind("IdEmpleado,nombreUsuario,Clave,UsuarioRegistro,FechaRegistro,Estado")] Usuario usuario)
         {
-            if (ModelState.IsValid)
+            var empleadoValido = _context.Empleados.Any(e => e.Id == usuario.IdEmpleado && e.Estado != -1);
+            if (!empleadoValido)
             {
+                ModelState.AddModelError("IdEmpleado", "El empleado seleccionado no existe o está deshabilitado.");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                usuario.UsuarioRegistro = User.Identity.Name;
                 usuario.FechaRegistro = DateTime.Now;
                 usuario.Estado = 1;
+
                 _context.Add(usuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdEmpleado"] = new SelectList(_context.Empleados, "Id", "Id", usuario.IdEmpleado);
+
+            ViewData["IdEmpleado"] = new SelectList(
+                _context.Empleados.Where(e => e.Estado != -1), "Id", "Nombres", usuario.IdEmpleado);
+
             return View(usuario);
         }
 
@@ -90,23 +111,23 @@ namespace WebTiendaCelulares.Controllers
         // POST: Usuarios/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,IdEmpleado,Usuario,Clave,UsuarioRegistro,FechaRegistro,Estado")] Usuario usuario)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,IdEmpleado,nombreUsuario,Clave,UsuarioRegistro,FechaRegistro,Estado")] Usuario usuario)
         {
             if (id != usuario.Id)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 try
                 {
-                    // Obtener el usuario original de la base de datos
-                    var usuarioDb = await _context.Usuarios.AsNoTracking().FirstOrDefaultAsync(u => u.Id == id);
-                    if (usuarioDb == null)
-                        return NotFound();
+                    usuario.UsuarioRegistro = User.Identity.Name;
+                    usuario.FechaRegistro = DateTime.Now;
+                    usuario.Estado = 1;
 
 
                     _context.Update(usuario);
@@ -149,6 +170,7 @@ namespace WebTiendaCelulares.Controllers
         }
 
         // POST: Usuarios/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -156,6 +178,9 @@ namespace WebTiendaCelulares.Controllers
             var usuario = await _context.Usuarios.FindAsync(id);
             if (usuario != null)
             {
+                usuario.UsuarioRegistro = User.Identity.Name;
+                usuario.FechaRegistro = DateTime.Now;
+                usuario.Estado = -1;
                 _context.Usuarios.Remove(usuario);
             }
 

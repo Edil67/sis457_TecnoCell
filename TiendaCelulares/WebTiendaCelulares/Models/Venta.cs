@@ -17,7 +17,7 @@ public partial class Venta
 
     public decimal MontoCambio { get; set; }
 
-    public decimal? MontoTotal { get; set; }
+    public decimal MontoTotal { get; set; }
 
     public string UsuarioRegistro { get; set; } = null!;
 

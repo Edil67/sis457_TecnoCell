@@ -9,7 +9,7 @@ public partial class Usuario
 
     public int IdEmpleado { get; set; }
 
-    public string Usuario1 { get; set; } = null!;
+    public string nombreUsuario { get; set; } = null!;
 
     public string Clave { get; set; } = null!;
 

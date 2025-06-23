@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -59,9 +60,10 @@ namespace WebTiendaCelulares.Controllers
         // POST: Productos/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,IdCategoria,Nombre,Modelo,Marca,Color,Descripcion,PrecioVenta,Stock,UsuarioRegistro,FechaRegistro,Estado")] Producto producto)
+        public async Task<IActionResult> Create([Bind("IdCategoria,Nombre,Modelo,Marca,Color,Descripcion,PrecioVenta,Stock,UsuarioRegistro,FechaRegistro,Estado")] Producto producto)
         {
             // Validar que la categoría existe y está activa
             var categoriaValida = _context.Categoria.Any(c => c.Id == producto.IdCategoria && c.Estado != -1);
@@ -87,40 +89,29 @@ namespace WebTiendaCelulares.Controllers
         // GET: Productos/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
+            if (id == null) return NotFound();
             var producto = await _context.Productos.FindAsync(id);
-            if (producto == null)
-            {
-                return NotFound();
-            }
-            // Solo mostrar categorías activas
-            ViewData["IdCategoria"] = new SelectList(_context.Categoria.Where(c => c.Estado != -1), "Id", "Descripcion", producto.IdCategoria);
+            if (producto == null) return NotFound();
+            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Descripcion", producto.IdCategoria);
             return View(producto);
         }
 
         // POST: Productos/Edit/5
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,IdCategoria,Nombre,Modelo,Marca,Color,Descripcion,PrecioVenta,Stock,UsuarioRegistro,FechaRegistro,Estado")] Producto producto)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,IdCategoria,Nombre,Modelo,Marca,Color,Descripcion,PrecioVenta,Stock")] Producto producto)
         {
-            if (id != producto.Id)
-            {
-                return NotFound();
-            }
-            var productoDb = await _context.Productos.FindAsync(id);
-            if (productoDb == null)
-            {
-                return NotFound();
-            }
-            if (ModelState.IsValid)
+            if (id != producto.Id) return NotFound();
+
+            if (!ModelState.IsValid)
             {
                 try
                 {
-                    producto.UsuarioRegistro = User.Identity.Name;
+                    var productoDb = await _context.Productos.FindAsync(id);
+                    if (productoDb == null) return NotFound();
+
+                    // Actualización directa sin condicionales
                     productoDb.Nombre = producto.Nombre;
                     productoDb.Modelo = producto.Modelo;
                     productoDb.Marca = producto.Marca;
@@ -129,17 +120,23 @@ namespace WebTiendaCelulares.Controllers
                     productoDb.PrecioVenta = producto.PrecioVenta;
                     productoDb.Stock = producto.Stock;
                     productoDb.IdCategoria = producto.IdCategoria;
+                    productoDb.UsuarioRegistro = User.Identity?.Name ?? productoDb.UsuarioRegistro;
+                    productoDb.FechaRegistro = DateTime.Now;
+
+                    productoDb.Estado = 1; // o el estado que corresponde
+
 
                     _context.Update(productoDb);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
                 }
-                catch (DbUpdateException ex)
+                catch (DbUpdateConcurrencyException)
                 {
-                    ModelState.AddModelError("", $"No se pudo actualizar el producto. {ex.Message}");
+                    if (!ProductoExists(producto.Id)) return NotFound();
+                    else throw;
                 }
             }
-            // Solo mostrar categorías activas en caso de error
+            // Si hay errores de validación, mostrar de nuevo la vista
             ViewData["IdCategoria"] = new SelectList(_context.Categoria.Where(c => c.Estado != -1), "Id", "Descripcion", producto.IdCategoria);
             return View(producto);
         }
@@ -147,25 +144,20 @@ namespace WebTiendaCelulares.Controllers
         // GET: Productos/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
+            if (id == null) return NotFound();
             var producto = await _context.Productos
                 .Include(p => p.IdCategoriaNavigation)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (producto == null)
-            {
-                return NotFound();
-            }
-
+            if (producto == null) return NotFound();
             return View(producto);
         }
 
         // POST: Productos/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        
+
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var producto = await _context.Productos.FindAsync(id);
@@ -173,7 +165,7 @@ namespace WebTiendaCelulares.Controllers
             {   
                 producto.UsuarioRegistro = User.Identity.Name ;//cambiar
                 producto.Estado = -1;
-                _context.Productos.Remove(producto);
+                _context.Productos.Update(producto);
             }
 
             await _context.SaveChangesAsync();

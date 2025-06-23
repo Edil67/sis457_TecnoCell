@@ -5,8 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Eliminar Cliente</h1>
-<hr />
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-lg-7">
@@ -15,11 +13,9 @@
                     <h4 class="mb-0">Eliminar Cliente</h4>
                 </div>
                 <div class="card-body">
-                    <div class="alert alert-danger">
-                        <strong>¿Estás seguro de eliminar este cliente?</strong> Esta acción no se puede deshacer.
-                    </div>
+                    <h5>¿Estás seguro que deseas eliminar este cliente?</h5>
                     <dl class="row">
-                        <dt class="col-sm-4">Cédula Identidad</dt>
+                        <dt class="col-sm-4">Cédula de Identidad</dt>
                         <dd class="col-sm-8">@Model.CedulaIdentidad</dd>
                         <dt class="col-sm-4">Nombres</dt>
                         <dd class="col-sm-8">@Model.Nombres</dd>
@@ -31,21 +27,17 @@
                         <dd class="col-sm-8">@Model.Direccion</dd>
                         <dt class="col-sm-4">Correo Electrónico</dt>
                         <dd class="col-sm-8">@Model.CorreoElectronico</dd>
-                        <dt class="col-sm-4">Usuario Registro</dt>
-                        <dd class="col-sm-8">@Model.UsuarioRegistro</dd>
-                        <dt class="col-sm-4">Fecha Registro</dt>
-                        <dd class="col-sm-8">@Model.FechaRegistro</dd>
-                        <dt class="col-sm-4">Estado</dt>
-                        <dd class="col-sm-8">@Model.Estado</dd>
                     </dl>
-                    <form asp-action="Delete" class="d-flex justify-content-between">
+                    <form asp-action="Delete">
                         <input type="hidden" asp-for="Id" />
-                        <button type="submit" class="btn btn-danger">
-                            <i class="fa fa-trash"></i> Eliminar
-                        </button>
-                        <a asp-action="Index" class="btn btn-outline-secondary">
-                            <i class="fa fa-arrow-left"></i> Cancelar
-                        </a>
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="Index" class="btn btn-outline-secondary">
+                                <i class="fa fa-arrow-left"></i> Cancelar
+                            </a>
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fa fa-trash"></i> Eliminar
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>

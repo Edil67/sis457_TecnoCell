@@ -1,52 +1,260 @@
 ﻿@model WebTiendaCelulares.Models.Venta
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Nueva Venta";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-7">
+            <div class="card shadow">
+                <div class="card-header bg-success text-white">
+                    <h4 class="mb-0">@ViewData["Title"]</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                        <div class="mb-3">
+                            <label asp-for="IdCliente" class="form-label">Cliente</label>
+                            
+                            <select asp-for="IdCliente" asp-items="ViewBag.Clientes" class="form-select"></select>
+                           
+                            <span asp-validation-for="IdCliente" class="text-danger"></span>
+                        </div>
 
-<h4>Venta</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="IdCliente" class="control-label"></label>
-                <select asp-for="IdCliente" class ="form-control" asp-items="ViewBag.IdCliente"></select>
+
+                        <div class="mb-3">
+                            <label class="form-label">Seleccionar producto</label>
+                            <select id="producto" class="form-select">
+                                <option value="">-- Selecciona un producto --</option>
+                                @foreach (var item in (IEnumerable<dynamic>)ViewBag.Productos)
+                                {
+                                    var partes = item.Descripcion.Split("|");
+
+                                    var nombre = partes.Length > 0 ? partes[0].Trim() : "";
+                                    var marcaModelo = partes.Length > 1 ? partes[1].Trim() : "";
+                                    var stock = partes.Length > 2 ? partes[2].Replace("Stock:", "").Trim() : "0";
+                                    var precioRaw = partes.Length > 3
+                                    ? partes[3]
+                                    .Replace("Precio:", "")
+                                    .Replace("Bs", "")
+                                    .Replace("$", "")
+                                    .Replace(".", "")
+                                    .Replace(",", ".")
+                                    .Trim()
+                                    : "0";
+
+                                    <option value="@item.Id"
+                                            data-marca="@marcaModelo"
+                                            data-stock="@stock"
+                                            data-precio="@precioRaw">
+                                        @item.Descripcion
+                                    </option>
+                                }
+
+
+                            </select>
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Marca / Modelo</label>
+                                <input type="text" class="form-control" id="marcaModelo" readonly />
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Stock</label>
+                                <input type="text" class="form-control" id="stockProducto" readonly />
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Precio Unitario</label>
+                                <input type="text" class="form-control" id="precioProducto" readonly />
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Cantidad</label>
+                            <input type="number" id="cantidad" class="form-control" min="1" value="1" />
+                            <button type="button" class="btn btn-primary" onclick="agregarProducto()">Agregar Producto</button>
+                        </div>
+                        <table class="table mt-3" id="tablaDetalle">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>Subtotal</th>
+                                    <th></th> <!-- Columna para botón eliminar -->
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+
+                        <div class="mb-3">
+                            <label class="form-label">Monto Total</label>
+                            <input asp-for="MontoTotal" class="form-control" id="montoTotal" readonly />
+
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Monto Pagado</label>
+                            <input asp-for="MontoPago" class="form-control" id="montoPago" />
+                            <span asp-validation-for="MontoPago" class="text-danger"></span>
+
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Cambio</label>
+                            <input asp-for="MontoCambio" class="form-control" id="montoCambio" readonly />
+                        </div>
+                        <div id="detalleContainer"></div>
+
+
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="Index" class="btn btn-outline-secondary">
+                                <i class="fa fa-arrow-left"></i> Volver
+                            </a>
+                            <button type="submit" class="btn btn-success">
+                                <i class="fa fa-save"></i> Guardar Venta
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="IdUsuario" class="control-label"></label>
-                <select asp-for="IdUsuario" class ="form-control" asp-items="ViewBag.IdUsuario"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="DocumentoCliente" class="control-label"></label>
-                <input asp-for="DocumentoCliente" class="form-control" />
-                <span asp-validation-for="DocumentoCliente" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MontoPago" class="control-label"></label>
-                <input asp-for="MontoPago" class="form-control" />
-                <span asp-validation-for="MontoPago" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MontoCambio" class="control-label"></label>
-                <input asp-for="MontoCambio" class="form-control" />
-                <span asp-validation-for="MontoCambio" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+                        document.querySelector("form").addEventListener("submit", function (e) {
+            const detalles = document.querySelectorAll("#detalleContainer input[name^='detalles[']");
+            const montoPago = parseFloat(document.getElementById("montoPago").value) || 0;
+            const cliente = document.getElementById("IdCliente").value;
+
+            if (detalles.length === 0) {
+                alert("Debe agregar al menos un producto.");
+                e.preventDefault();
+            }
+            if (!cliente) {
+                alert("Debe seleccionar un cliente.");
+                e.preventDefault();
+            }
+            if (montoPago <= 0) {
+                alert("El monto de pago debe ser mayor a 0.");
+                e.preventDefault();
+            }
+        });
+
+
+        const productoSelect = document.getElementById("producto");
+        const cantidadInput = document.getElementById("cantidad");
+        const pagoInput = document.getElementById("montoPago");
+
+        const marcaInput = document.getElementById("marcaModelo");
+        const stockInput = document.getElementById("stockProducto");
+        const precioInput = document.getElementById("precioProducto");
+
+        const totalInput = document.getElementById("montoTotal");
+        const cambioInput = document.getElementById("montoCambio");
+
+        function actualizarProducto() {
+            const option = productoSelect.options[productoSelect.selectedIndex];
+            if (!option.value) {
+                marcaInput.value = stockInput.value = precioInput.value = "";
+                calcularTotales();
+                return;
+            }
+
+            marcaInput.value = option.dataset.marca;
+            stockInput.value = option.dataset.stock;
+            precioInput.value = option.dataset.precio;
+                    console.log("Precio:", precioInput.value);
+        console.log("Stock:", stockInput.value);
+
+            calcularTotales();
+        }
+
+        function calcularTotales() {
+           recalcularTotal();
+        }
+
+                        function agregarProducto() {
+            const select = document.getElementById("producto");
+            const cantidad = parseInt(document.getElementById("cantidad").value);
+            const precio = parseFloat(select.options[select.selectedIndex].dataset.precio);
+            const stock = parseInt(select.options[select.selectedIndex].dataset.stock);
+            const idProducto = select.value;
+
+            if (cantidad > stock) {
+                alert("No hay suficiente stock disponible.");
+                return;
+            }
+
+            const producto = select.options[select.selectedIndex].text;
+            const subtotal = precio * cantidad;
+
+            const index = document.querySelectorAll("#detalleContainer input[name^='detalles[']").length;
+                    const fila = `<tr data-index="${index}">
+            <td>${producto}</td>
+            <td>${precio.toFixed(2)}</td>
+            <td>${cantidad}</td>
+            <td>${subtotal.toFixed(2)}</td>
+            <td><button type="button" class="btn btn-sm btn-danger" onclick="eliminarFila(this)">✖</button></td>
+        </tr>`;
+
+
+
+            document.querySelector("#tablaDetalle tbody").insertAdjacentHTML('beforeend', fila);
+
+            // 🧠 Agregá inputs ocultos al formulario
+            const container = document.getElementById("detalleContainer");
+                           container.insertAdjacentHTML('beforeend', `
+            <div data-index="${index}">
+                <input type="hidden" name="detalles.Index" value="${index}" />
+                <input type="hidden" name="detalles[${index}].IdProducto" value="${idProducto}" />
+                <input type="hidden" name="detalles[${index}].Cantidad" value="${cantidad}" />
+                <input type="hidden" name="detalles[${index}].PrecioUnitario" value="${precio.toFixed(2)}" />
+            </div>
+        `);
+
+
+
+            recalcularTotal();
+        }
+
+
+        function recalcularTotal() {
+            const filas = document.querySelectorAll("#tablaDetalle tbody tr");
+            let total = 0;
+            filas.forEach(fila => {
+                const subtotal = parseFloat(fila.cells[3].textContent) || 0;
+                total += subtotal;
+            });
+            document.getElementById("montoTotal").value = total.toFixed(2);
+
+            const pagado = parseFloat(document.getElementById("montoPago").value) || 0;
+            document.getElementById("montoCambio").value = Math.max(pagado - total, 0).toFixed(2);
+        }
+                function eliminarFila(boton) {
+                const fila = boton.closest("tr");
+        const index = fila.getAttribute("data-index");
+
+        fila.remove(); // elimina la fila visual
+
+        // elimina los inputs ocultos correspondientes
+        const bloqueHidden = document.querySelector(`#detalleContainer div[data-index="${index}"]`);
+        if (bloqueHidden) {
+            bloqueHidden.remove();
+        }
+
+        recalcularTotal();
+        }
+
+
+        productoSelect.addEventListener("change", actualizarProducto);
+        cantidadInput.addEventListener("input", calcularTotales);
+        pagoInput.addEventListener("input", calcularTotales);
+    </script>
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

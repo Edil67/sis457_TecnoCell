@@ -201,7 +201,7 @@ public partial class FinalTiendaCelularesContext : DbContext
 
             entity.ToTable("Usuario");
 
-            entity.HasIndex(e => e.Usuario1, "UQ__Usuario__9AFF8FC6AA12AFE3").IsUnique();
+            entity.HasIndex(e => e.nombreUsuario, "UQ__Usuario__9AFF8FC6AA12AFE3").IsUnique();
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Clave)
@@ -216,7 +216,7 @@ public partial class FinalTiendaCelularesContext : DbContext
                 .HasColumnType("datetime")
                 .HasColumnName("fechaRegistro");
             entity.Property(e => e.IdEmpleado).HasColumnName("idEmpleado");
-            entity.Property(e => e.Usuario1)
+            entity.Property(e => e.nombreUsuario)
                 .HasMaxLength(15)
                 .IsUnicode(false)
                 .HasColumnName("usuario");

@@ -1,30 +1,25 @@
 ﻿@model WebTiendaCelulares.Models.Categorium
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Nueva Categoría";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
-
-<h4>Categorium</h4>
-<div class="container py-4">
+<div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-lg-7">
             <div class="card shadow">
                 <div class="card-header bg-success text-white">
-                    <h4 class="mb-0">Nuevo Registro</h4>
+                    <h4 class="mb-0">Registrar Nueva Categoría</h4>
                 </div>
                 <div class="card-body">
                     <form asp-action="Create">
                         <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
-                        <!-- Reemplaza los campos por los de tu modelo -->
                         <div class="mb-3">
-                            <label asp-for="Descripcion" class="form-label"></label>
+                            <label asp-for="Descripcion" class="form-label">Descripción</label>
                             <input asp-for="Descripcion" class="form-control" />
                             <span asp-validation-for="Descripcion" class="text-danger"></span>
                         </div>
-                        <!-- ...otros campos... -->
                         <div class="d-flex justify-content-between">
                             <a asp-action="Index" class="btn btn-outline-secondary">
                                 <i class="fa fa-arrow-left"></i> Volver
@@ -41,5 +36,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

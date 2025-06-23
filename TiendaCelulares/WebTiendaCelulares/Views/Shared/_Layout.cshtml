@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
     <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/celular1.ico">
     <link rel="stylesheet" href="~/assets/css/bootstrap.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/assets/css/templatemo.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/assets/css/custom.css" asp-append-version="true" />
@@ -45,7 +45,7 @@
         <div class="container d-flex justify-content-between align-items-center">
 
             <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
-                Zay
+                TecnoSucre
             </a>
 
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,12 +54,15 @@
 
             <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
                 <div class="flex-fill">
-                    <<ul class="nav navbar-nav mx-lg-auto">
+                    <ul class="nav navbar-nav mx-lg-auto">
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Home" asp-action="Index">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Productos" asp-action="Index">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Categorias" asp-action="Index">Categorias</a>
                         </li>
                         @if (User.Identity.IsAuthenticated)
                         {
@@ -71,6 +74,9 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" asp-controller="Usuarios" asp-action="Index">Usuarios</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Empleados" asp-action="Index">Empleados</a>
                             </li>
                         }
                     </ul>
@@ -89,26 +95,24 @@
                         <i class="fa fa-fw fa-search text-dark mr-2"></i>
                     </a>
                     <a class="nav-icon position-relative text-decoration-none" href="#">
-                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
                     </a>
+                        
+                </div>@if (!User.Identity.IsAuthenticated)
+                {
                     <a class="nav-icon position-relative text-decoration-none" asp-controller="Account" asp-action="Login">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
                     </a>
-                        
-                </div>@if (User.Identity.IsAuthenticated)
-                        {
-                           
-                                <span class="nav-link">👤 @User.Identity.Name</span>
-                            
-                            
-                                <form asp-controller="Account" asp-action="Logout" method="post" class="form-inline" style="display:inline;">
-    <button type="submit" class="btn btn-link nav-link p-0" title="Cerrar sesión" style="cursor:pointer;">
-        <i class="fas fa-sign-out-alt"></i>
-    </button>
-</form>
-                            
-                        }
+                }
+                                else
+                {
+                    <span class="nav-link">👤 @User.Identity.Name</span>
+                    <form asp-controller="Account" asp-action="Logout" method="post" class="form-inline" style="display:inline;">
+                        <button type="submit" class="btn btn-link nav-link p-0" title="Cerrar sesión" style="cursor:pointer;">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </form>
+                }
             </div>
 
         </div>
@@ -139,7 +143,7 @@
         <div class="row">
 
             <div class="col-md-4 pt-5">
-                <h2 class="h2 text-success border-bottom pb-3 border-light logo">Zay Shop</h2>
+                <h2 class="h2 text-success border-bottom pb-3 border-light logo">TencoSucre Shop</h2>
                 <ul class="list-unstyled text-light footer-link-list">
                     <li>
                         <i class="fas fa-map-marker-alt fa-fw"></i>
@@ -157,17 +161,18 @@
             </div>
 
             <div class="col-md-4 pt-5">
-                <h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
+                <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
                 <ul class="list-unstyled text-light footer-link-list">
-                    <li><a class="text-decoration-none" href="#">Luxury</a></li>
-                    <li><a class="text-decoration-none" href="#">Sport Wear</a></li>
-                    <li><a class="text-decoration-none" href="#">Men's Shoes</a></li>
-                    <li><a class="text-decoration-none" href="#">Women's Shoes</a></li>
-                    <li><a class="text-decoration-none" href="#">Popular Dress</a></li>
-                    <li><a class="text-decoration-none" href="#">Gym Accessories</a></li>
-                    <li><a class="text-decoration-none" href="#">Sport Shoes</a></li>
+                    <li><a class="text-decoration-none" href="#">Celulares</a></li>
+                    <li><a class="text-decoration-none" href="#">Accesorios</a></li>
+                    <li><a class="text-decoration-none" href="#">Audífonos</a></li>
+                    <li><a class="text-decoration-none" href="#">Cargadores</a></li>
+                    <li><a class="text-decoration-none" href="#">Fundas y protectores</a></li>
+                    <li><a class="text-decoration-none" href="#">Power Banks</a></li>
+                    <li><a class="text-decoration-none" href="#">Ofertas del mes</a></li>
                 </ul>
             </div>
+
 
             <div class="col-md-4 pt-5">
                 <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
@@ -176,7 +181,9 @@
                     <li><a class="text-decoration-none" href="#">Productos</a></li>
                     <li><a class="text-decoration-none" href="#">Ventas</a></li>
                     <li><a class="text-decoration-none" href="#">Clientes</a></li>
-                    <li><a class="text-decoration-none" href="#">Contactanos</a></li>
+                    <li>
+                        <a class="text-decoration-none" href="~/template/contact.html">Contactanos</a>
+                    </li>
                 </ul>
             </div>
 
@@ -201,13 +208,6 @@
                         <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
                     </li>
                 </ul>
-            </div>
-            <div class="col-auto">
-                <label class="sr-only" for="subscribeEmail">Email address</label>
-                <div class="input-group mb-2">
-                    <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address">
-                    <div class="input-group-text btn-success text-light">Subscribe</div>
-                </div>
             </div>
         </div>
     </div>

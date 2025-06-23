@@ -41,7 +41,7 @@ namespace WebTiendaCelulares.Controllers
             }
 
             var usuario = _context.Usuarios
-                .Where(x => x.Estado == 1 && x.Usuario1 == model.usuario && x.Clave == Encrypt(model.clave))
+                .Where(x => x.Estado == 1 && x.nombreUsuario == model.usuario && x.Clave == Encrypt(model.clave))
                 .FirstOrDefault();
 
             if (usuario != null)
@@ -50,7 +50,7 @@ namespace WebTiendaCelulares.Controllers
 
                 var claims = new List<Claim>
         {
-            new Claim(ClaimTypes.Name, usuario.Usuario1),
+            new Claim(ClaimTypes.Name, usuario.nombreUsuario),
             new Claim(ClaimTypes.Email, "vaca.noel@usfx.bo")
         };
 
