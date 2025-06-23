@@ -266,3 +266,5 @@ SELECT * FROM VentaDetalle;
 
 
 ALTER DATABASE TecnoCell_db MODIFY NAME = NuevoNombreDB;
+
+

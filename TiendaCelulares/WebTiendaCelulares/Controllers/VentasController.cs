@@ -129,6 +129,9 @@ namespace WebTiendaCelulares.Controllers
                     producto.Stock -= item.Cantidad;
                     item.PrecioUnitario = producto.PrecioVenta;
                     item.IdVenta = venta.Id; // esta línea es clave
+                    item.UsuarioRegistro = User.Identity.Name;
+                    item.FechaRegistro = DateTime.Now;
+                    item.Estado = 1;
                     _context.VentaDetalles.Add(item);
                     montoTotal += item.PrecioUnitario * item.Cantidad;
 

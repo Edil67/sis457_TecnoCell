@@ -78,6 +78,10 @@ namespace WebTiendaCelulares.Controllers
         {
             if (ModelState.IsValid)
             {
+
+                ventaDetalle.UsuarioRegistro = User.Identity.Name;
+                ventaDetalle.FechaRegistro = DateTime.Now;
+                ventaDetalle.Estado = 1;
                 _context.Add(ventaDetalle);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -121,6 +125,10 @@ namespace WebTiendaCelulares.Controllers
             {
                 try
                 {
+
+                    ventaDetalle.UsuarioRegistro = User.Identity.Name;
+                    ventaDetalle.FechaRegistro = DateTime.Now;
+                    ventaDetalle.Estado = 1;
                     _context.Update(ventaDetalle);
                     await _context.SaveChangesAsync();
                 }
@@ -170,6 +178,9 @@ namespace WebTiendaCelulares.Controllers
             var ventaDetalle = await _context.VentaDetalles.FindAsync(id);
             if (ventaDetalle != null)
             {
+                ventaDetalle.UsuarioRegistro = User.Identity.Name;
+                ventaDetalle.FechaRegistro = DateTime.Now;
+                ventaDetalle.Estado = 1;
                 _context.VentaDetalles.Remove(ventaDetalle);
             }
 

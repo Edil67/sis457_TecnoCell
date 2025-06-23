@@ -5,10 +5,10 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="87c0c2c088c741c18220f3745ea10421" Name="Diagram1" ZoomLevel="64">
-        <EntityTypeShape EntityType="LabTiendaCelularesModel.Categoria" Width="1.5" PointX="12.25" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabTiendaCelularesModel.Cliente" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabTiendaCelularesModel.Categoria" Width="1.5" PointX="12.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabTiendaCelularesModel.Cliente" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="LabTiendaCelularesModel.Empleado" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabTiendaCelularesModel.Producto" Width="1.5" PointX="10.125" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabTiendaCelularesModel.Producto" Width="1.5" PointX="10.125" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="LabTiendaCelularesModel.Usuario" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="LabTiendaCelularesModel.Venta" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="LabTiendaCelularesModel.VentaDetalle" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />

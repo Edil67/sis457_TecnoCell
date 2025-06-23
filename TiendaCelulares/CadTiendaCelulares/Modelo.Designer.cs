@@ -1,4 +1,4 @@
-﻿// La generación de código T4 está habilitada para el modelo 'E:\darwin\sis457_TecnoCell\TecnoCell\CadTecnoCell\Modelo.edmx'. 
+﻿// La generación de código T4 está habilitada para el modelo 'D:\DARWIN\sis457-fundamen_progr-INFOR\PROYECTO\sis457_TiendaCelulares\TiendaCelulares\CadTiendaCelulares\Modelo.edmx'. 
 // Para habilitar la generación de código heredada, cambie el valor de la propiedad del diseñador 'Estrategia de generación de código'
 // por 'ObjectContext heredado'. Esta propiedad está disponible en la ventana Propiedades cuando se abre
 // el modelo en el diseñador.
